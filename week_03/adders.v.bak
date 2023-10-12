@@ -1,0 +1,8 @@
+module half_adder_v (input A, input B, output SUM, output CARRY);
+	xor _xor(SUM, A, B);
+	and _and(CARRY, A, B);
+endmodule
+
+
+module full_adder_v (input A, input B, input C_in, input SUM, input CARRY)
+endmodule

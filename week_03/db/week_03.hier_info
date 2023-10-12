@@ -1,0 +1,45 @@
+|week_03
+LED[0] <= half_adder_v:inst5.SUM
+LED[1] <= full_adder_v:inst.SUM
+LED[2] <= full_adder_v:inst.CARRY
+KEY[0] => inst1.IN0
+KEY[1] => inst2.IN0
+KEY[2] => inst3.IN0
+KEY[3] => inst4.IN0
+
+
+|week_03|half_adder_v:inst5
+A => comb.IN0
+A => comb.IN0
+B => comb.IN1
+B => comb.IN1
+SUM <= comb.DB_MAX_OUTPUT_PORT_TYPE
+CARRY <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|week_03|full_adder_v:inst
+C_in => C_in.IN1
+A => A.IN1
+B => B.IN1
+SUM <= half_adder_v:adder2.port2
+CARRY <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|week_03|full_adder_v:inst|half_adder_v:adder1
+A => comb.IN0
+A => comb.IN0
+B => comb.IN1
+B => comb.IN1
+SUM <= comb.DB_MAX_OUTPUT_PORT_TYPE
+CARRY <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|week_03|full_adder_v:inst|half_adder_v:adder2
+A => comb.IN0
+A => comb.IN0
+B => comb.IN1
+B => comb.IN1
+SUM <= comb.DB_MAX_OUTPUT_PORT_TYPE
+CARRY <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+
