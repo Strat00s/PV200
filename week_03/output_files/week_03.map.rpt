@@ -1,5 +1,5 @@
 Analysis & Synthesis report for week_03
-Thu Oct 12 17:11:37 2023
+Tue Oct 17 19:09:07 2023
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -43,7 +43,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Thu Oct 12 17:11:37 2023       ;
+; Analysis & Synthesis Status     ; Successful - Tue Oct 17 19:09:07 2023       ;
 ; Quartus Prime Version           ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                   ; week_03                                     ;
 ; Top-level Entity Name           ; week_03                                     ;
@@ -155,8 +155,8 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 6           ;
-; Maximum allowed            ; 6           ;
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
 ; Maximum used               ; 1           ;
@@ -166,15 +166,15 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                           ;
-+----------------------------------+-----------------+------------------------------------------+--------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                                ; File Name with Absolute Path                           ; Library ;
-+----------------------------------+-----------------+------------------------------------------+--------------------------------------------------------+---------+
-; half_adder_v.v                   ; yes             ; User Verilog HDL File                    ; C:/intelFPGA_lite/xbastyr/PV200/week_03/half_adder_v.v ;         ;
-; full_adder_v.v                   ; yes             ; User Verilog HDL File                    ; C:/intelFPGA_lite/xbastyr/PV200/week_03/full_adder_v.v ;         ;
-; week_03.bdf                      ; yes             ; Auto-Found Block Diagram/Schematic File  ; C:/intelFPGA_lite/xbastyr/PV200/week_03/week_03.bdf    ;         ;
-+----------------------------------+-----------------+------------------------------------------+--------------------------------------------------------+---------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                     ;
++----------------------------------+-----------------+------------------------------------------+------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                                ; File Name with Absolute Path                                     ; Library ;
++----------------------------------+-----------------+------------------------------------------+------------------------------------------------------------------+---------+
+; half_adder_v.v                   ; yes             ; User Verilog HDL File                    ; C:/Users/lbast/Documents/0_Projects/PV200/week_03/half_adder_v.v ;         ;
+; full_adder_v.v                   ; yes             ; User Verilog HDL File                    ; C:/Users/lbast/Documents/0_Projects/PV200/week_03/full_adder_v.v ;         ;
+; week_03.bdf                      ; yes             ; Auto-Found Block Diagram/Schematic File  ; C:/Users/lbast/Documents/0_Projects/PV200/week_03/week_03.bdf    ;         ;
++----------------------------------+-----------------+------------------------------------------+------------------------------------------------------------------+---------+
 
 
 +------------------------------------------------------------+
@@ -264,14 +264,14 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Thu Oct 12 17:11:29 2023
+    Info: Processing started: Tue Oct 17 19:08:58 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off week_03 -c week_03
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file half_adder_v.v
-    Info (12023): Found entity 1: half_adder_v File: C:/intelFPGA_lite/xbastyr/PV200/week_03/half_adder_v.v Line: 1
+    Info (12023): Found entity 1: half_adder_v File: C:/Users/lbast/Documents/0_Projects/PV200/week_03/half_adder_v.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file full_adder_v.v
-    Info (12023): Found entity 1: full_adder_v File: C:/intelFPGA_lite/xbastyr/PV200/week_03/full_adder_v.v Line: 1
+    Info (12023): Found entity 1: full_adder_v File: C:/Users/lbast/Documents/0_Projects/PV200/week_03/full_adder_v.v Line: 1
 Warning (12125): Using design file week_03.bdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
     Info (12023): Found entity 1: week_03
 Info (12127): Elaborating entity "week_03" for the top level hierarchy
@@ -312,9 +312,9 @@ Info (21057): Implemented 10 device resources after synthesis - the final resour
     Info (21059): Implemented 3 output pins
     Info (21061): Implemented 3 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 29 warnings
-    Info: Peak virtual memory: 4821 megabytes
-    Info: Processing ended: Thu Oct 12 17:11:37 2023
-    Info: Elapsed time: 00:00:08
-    Info: Total CPU time (on all processors): 00:00:15
+    Info: Peak virtual memory: 4813 megabytes
+    Info: Processing ended: Tue Oct 17 19:09:07 2023
+    Info: Elapsed time: 00:00:09
+    Info: Total CPU time (on all processors): 00:00:13
 
 

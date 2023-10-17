@@ -1,0 +1,356 @@
+|hw_01
+S[0] <= inst8.DB_MAX_OUTPUT_PORT_TYPE
+S[1] <= 4bit_rc_adder:inst.S0
+S[2] <= 4bit_rc_adder:inst24.S0
+S[3] <= 4bit_rc_adder:inst25.S0
+S[4] <= 4bit_rc_adder:inst25.S1
+S[5] <= 4bit_rc_adder:inst25.S2
+S[6] <= 4bit_rc_adder:inst25.S3
+S[7] <= 4bit_rc_adder:inst25.C
+A[0] => inst12.IN0
+A[0] => inst16.IN0
+A[0] => inst20.IN0
+A[0] => inst8.IN0
+A[1] => inst9.IN0
+A[1] => inst13.IN0
+A[1] => inst17.IN0
+A[1] => inst21.IN0
+A[2] => inst10.IN0
+A[2] => inst14.IN0
+A[2] => inst18.IN0
+A[2] => inst22.IN0
+A[3] => inst11.IN0
+A[3] => inst15.IN0
+A[3] => inst19.IN0
+A[3] => inst23.IN0
+B[0] => inst9.IN1
+B[0] => inst10.IN1
+B[0] => inst11.IN1
+B[0] => inst8.IN1
+B[1] => inst12.IN1
+B[1] => inst13.IN1
+B[1] => inst14.IN1
+B[1] => inst15.IN1
+B[2] => inst16.IN1
+B[2] => inst17.IN1
+B[2] => inst18.IN1
+B[2] => inst19.IN1
+B[3] => inst20.IN1
+B[3] => inst21.IN1
+B[3] => inst22.IN1
+B[3] => inst23.IN1
+
+
+|hw_01|4bit_rc_adder:inst
+S0 <= half_adder_v:inst.SUM
+B0 => half_adder_v:inst.A
+A0 => half_adder_v:inst.B
+S1 <= full_adder_v:inst2.SUM
+B1 => full_adder_v:inst2.A
+A1 => full_adder_v:inst2.B
+S2 <= full_adder_v:inst3.SUM
+B2 => full_adder_v:inst3.A
+A2 => full_adder_v:inst3.B
+S3 <= full_adder_v:inst4.SUM
+B3 => full_adder_v:inst4.A
+A3 => full_adder_v:inst4.B
+C <= full_adder_v:inst4.CARRY
+
+
+|hw_01|4bit_rc_adder:inst|half_adder_v:inst
+A => comb.IN0
+A => comb.IN0
+B => comb.IN1
+B => comb.IN1
+SUM <= comb.DB_MAX_OUTPUT_PORT_TYPE
+CARRY <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|hw_01|4bit_rc_adder:inst|full_adder_v:inst2
+C_in => C_in.IN1
+A => A.IN1
+B => B.IN1
+SUM <= half_adder_v:adder2.port2
+CARRY <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|hw_01|4bit_rc_adder:inst|full_adder_v:inst2|half_adder_v:adder1
+A => comb.IN0
+A => comb.IN0
+B => comb.IN1
+B => comb.IN1
+SUM <= comb.DB_MAX_OUTPUT_PORT_TYPE
+CARRY <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|hw_01|4bit_rc_adder:inst|full_adder_v:inst2|half_adder_v:adder2
+A => comb.IN0
+A => comb.IN0
+B => comb.IN1
+B => comb.IN1
+SUM <= comb.DB_MAX_OUTPUT_PORT_TYPE
+CARRY <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|hw_01|4bit_rc_adder:inst|full_adder_v:inst3
+C_in => C_in.IN1
+A => A.IN1
+B => B.IN1
+SUM <= half_adder_v:adder2.port2
+CARRY <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|hw_01|4bit_rc_adder:inst|full_adder_v:inst3|half_adder_v:adder1
+A => comb.IN0
+A => comb.IN0
+B => comb.IN1
+B => comb.IN1
+SUM <= comb.DB_MAX_OUTPUT_PORT_TYPE
+CARRY <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|hw_01|4bit_rc_adder:inst|full_adder_v:inst3|half_adder_v:adder2
+A => comb.IN0
+A => comb.IN0
+B => comb.IN1
+B => comb.IN1
+SUM <= comb.DB_MAX_OUTPUT_PORT_TYPE
+CARRY <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|hw_01|4bit_rc_adder:inst|full_adder_v:inst4
+C_in => C_in.IN1
+A => A.IN1
+B => B.IN1
+SUM <= half_adder_v:adder2.port2
+CARRY <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|hw_01|4bit_rc_adder:inst|full_adder_v:inst4|half_adder_v:adder1
+A => comb.IN0
+A => comb.IN0
+B => comb.IN1
+B => comb.IN1
+SUM <= comb.DB_MAX_OUTPUT_PORT_TYPE
+CARRY <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|hw_01|4bit_rc_adder:inst|full_adder_v:inst4|half_adder_v:adder2
+A => comb.IN0
+A => comb.IN0
+B => comb.IN1
+B => comb.IN1
+SUM <= comb.DB_MAX_OUTPUT_PORT_TYPE
+CARRY <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|hw_01|LPM_CONSTANT:inst28
+result[0] <= <GND>
+
+
+|hw_01|4bit_rc_adder:inst24
+S0 <= half_adder_v:inst.SUM
+B0 => half_adder_v:inst.A
+A0 => half_adder_v:inst.B
+S1 <= full_adder_v:inst2.SUM
+B1 => full_adder_v:inst2.A
+A1 => full_adder_v:inst2.B
+S2 <= full_adder_v:inst3.SUM
+B2 => full_adder_v:inst3.A
+A2 => full_adder_v:inst3.B
+S3 <= full_adder_v:inst4.SUM
+B3 => full_adder_v:inst4.A
+A3 => full_adder_v:inst4.B
+C <= full_adder_v:inst4.CARRY
+
+
+|hw_01|4bit_rc_adder:inst24|half_adder_v:inst
+A => comb.IN0
+A => comb.IN0
+B => comb.IN1
+B => comb.IN1
+SUM <= comb.DB_MAX_OUTPUT_PORT_TYPE
+CARRY <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|hw_01|4bit_rc_adder:inst24|full_adder_v:inst2
+C_in => C_in.IN1
+A => A.IN1
+B => B.IN1
+SUM <= half_adder_v:adder2.port2
+CARRY <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|hw_01|4bit_rc_adder:inst24|full_adder_v:inst2|half_adder_v:adder1
+A => comb.IN0
+A => comb.IN0
+B => comb.IN1
+B => comb.IN1
+SUM <= comb.DB_MAX_OUTPUT_PORT_TYPE
+CARRY <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|hw_01|4bit_rc_adder:inst24|full_adder_v:inst2|half_adder_v:adder2
+A => comb.IN0
+A => comb.IN0
+B => comb.IN1
+B => comb.IN1
+SUM <= comb.DB_MAX_OUTPUT_PORT_TYPE
+CARRY <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|hw_01|4bit_rc_adder:inst24|full_adder_v:inst3
+C_in => C_in.IN1
+A => A.IN1
+B => B.IN1
+SUM <= half_adder_v:adder2.port2
+CARRY <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|hw_01|4bit_rc_adder:inst24|full_adder_v:inst3|half_adder_v:adder1
+A => comb.IN0
+A => comb.IN0
+B => comb.IN1
+B => comb.IN1
+SUM <= comb.DB_MAX_OUTPUT_PORT_TYPE
+CARRY <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|hw_01|4bit_rc_adder:inst24|full_adder_v:inst3|half_adder_v:adder2
+A => comb.IN0
+A => comb.IN0
+B => comb.IN1
+B => comb.IN1
+SUM <= comb.DB_MAX_OUTPUT_PORT_TYPE
+CARRY <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|hw_01|4bit_rc_adder:inst24|full_adder_v:inst4
+C_in => C_in.IN1
+A => A.IN1
+B => B.IN1
+SUM <= half_adder_v:adder2.port2
+CARRY <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|hw_01|4bit_rc_adder:inst24|full_adder_v:inst4|half_adder_v:adder1
+A => comb.IN0
+A => comb.IN0
+B => comb.IN1
+B => comb.IN1
+SUM <= comb.DB_MAX_OUTPUT_PORT_TYPE
+CARRY <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|hw_01|4bit_rc_adder:inst24|full_adder_v:inst4|half_adder_v:adder2
+A => comb.IN0
+A => comb.IN0
+B => comb.IN1
+B => comb.IN1
+SUM <= comb.DB_MAX_OUTPUT_PORT_TYPE
+CARRY <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|hw_01|4bit_rc_adder:inst25
+S0 <= half_adder_v:inst.SUM
+B0 => half_adder_v:inst.A
+A0 => half_adder_v:inst.B
+S1 <= full_adder_v:inst2.SUM
+B1 => full_adder_v:inst2.A
+A1 => full_adder_v:inst2.B
+S2 <= full_adder_v:inst3.SUM
+B2 => full_adder_v:inst3.A
+A2 => full_adder_v:inst3.B
+S3 <= full_adder_v:inst4.SUM
+B3 => full_adder_v:inst4.A
+A3 => full_adder_v:inst4.B
+C <= full_adder_v:inst4.CARRY
+
+
+|hw_01|4bit_rc_adder:inst25|half_adder_v:inst
+A => comb.IN0
+A => comb.IN0
+B => comb.IN1
+B => comb.IN1
+SUM <= comb.DB_MAX_OUTPUT_PORT_TYPE
+CARRY <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|hw_01|4bit_rc_adder:inst25|full_adder_v:inst2
+C_in => C_in.IN1
+A => A.IN1
+B => B.IN1
+SUM <= half_adder_v:adder2.port2
+CARRY <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|hw_01|4bit_rc_adder:inst25|full_adder_v:inst2|half_adder_v:adder1
+A => comb.IN0
+A => comb.IN0
+B => comb.IN1
+B => comb.IN1
+SUM <= comb.DB_MAX_OUTPUT_PORT_TYPE
+CARRY <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|hw_01|4bit_rc_adder:inst25|full_adder_v:inst2|half_adder_v:adder2
+A => comb.IN0
+A => comb.IN0
+B => comb.IN1
+B => comb.IN1
+SUM <= comb.DB_MAX_OUTPUT_PORT_TYPE
+CARRY <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|hw_01|4bit_rc_adder:inst25|full_adder_v:inst3
+C_in => C_in.IN1
+A => A.IN1
+B => B.IN1
+SUM <= half_adder_v:adder2.port2
+CARRY <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|hw_01|4bit_rc_adder:inst25|full_adder_v:inst3|half_adder_v:adder1
+A => comb.IN0
+A => comb.IN0
+B => comb.IN1
+B => comb.IN1
+SUM <= comb.DB_MAX_OUTPUT_PORT_TYPE
+CARRY <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|hw_01|4bit_rc_adder:inst25|full_adder_v:inst3|half_adder_v:adder2
+A => comb.IN0
+A => comb.IN0
+B => comb.IN1
+B => comb.IN1
+SUM <= comb.DB_MAX_OUTPUT_PORT_TYPE
+CARRY <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|hw_01|4bit_rc_adder:inst25|full_adder_v:inst4
+C_in => C_in.IN1
+A => A.IN1
+B => B.IN1
+SUM <= half_adder_v:adder2.port2
+CARRY <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|hw_01|4bit_rc_adder:inst25|full_adder_v:inst4|half_adder_v:adder1
+A => comb.IN0
+A => comb.IN0
+B => comb.IN1
+B => comb.IN1
+SUM <= comb.DB_MAX_OUTPUT_PORT_TYPE
+CARRY <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|hw_01|4bit_rc_adder:inst25|full_adder_v:inst4|half_adder_v:adder2
+A => comb.IN0
+A => comb.IN0
+B => comb.IN1
+B => comb.IN1
+SUM <= comb.DB_MAX_OUTPUT_PORT_TYPE
+CARRY <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+
