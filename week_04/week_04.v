@@ -36,7 +36,7 @@ module week_04(
 //=======================================================
 	wire [7:0] NUM1;  // left two digits
 	wire [7:0] NUM2;	// middle two digits
-	wire [7:0] NUM3;  // right two digits
+	reg  [7:0] NUM3;  // right two digits
 	
 
 //=======================================================
@@ -55,6 +55,15 @@ module week_04(
 	assign LEDR = SW;
 
    // TASK2: Build calculating block	
-	assign NUM3 = 0;
+	//assign NUM3 = 0;
+	
+	always @(KEY, SW[1:0], NUM1, NUM2) begin
+		case ({SW[1:0]})
+			2'b00: NUM3 = {4'b0000, ~KEY[3:0]};
+			2'b01: NUM3 = NUM1 + NUM2 + {4'b0000, ~KEY[3:0]};
+			2'b10: NUM3 = NUM1 - NUM2 + {4'b0000, ~KEY[3:0]};
+			2'b11: NUM3 = NUM1 * NUM2 + {4'b0000, ~KEY[3:0]};
+		endcase
+	end
 
 endmodule

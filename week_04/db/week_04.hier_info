@@ -1,0 +1,185 @@
+|week_04
+CLOCK2_50 => ~NO_FANOUT~
+CLOCK3_50 => ~NO_FANOUT~
+CLOCK4_50 => ~NO_FANOUT~
+CLOCK_50 => ~NO_FANOUT~
+HEX0[0] <= segment7:digit0.port1
+HEX0[1] <= segment7:digit0.port1
+HEX0[2] <= segment7:digit0.port1
+HEX0[3] <= segment7:digit0.port1
+HEX0[4] <= segment7:digit0.port1
+HEX0[5] <= segment7:digit0.port1
+HEX0[6] <= segment7:digit0.port1
+HEX1[0] <= segment7:digit1.port1
+HEX1[1] <= segment7:digit1.port1
+HEX1[2] <= segment7:digit1.port1
+HEX1[3] <= segment7:digit1.port1
+HEX1[4] <= segment7:digit1.port1
+HEX1[5] <= segment7:digit1.port1
+HEX1[6] <= segment7:digit1.port1
+HEX2[0] <= segment7:digit2.port1
+HEX2[1] <= segment7:digit2.port1
+HEX2[2] <= segment7:digit2.port1
+HEX2[3] <= segment7:digit2.port1
+HEX2[4] <= segment7:digit2.port1
+HEX2[5] <= segment7:digit2.port1
+HEX2[6] <= segment7:digit2.port1
+HEX3[0] <= segment7:digit3.port1
+HEX3[1] <= segment7:digit3.port1
+HEX3[2] <= segment7:digit3.port1
+HEX3[3] <= segment7:digit3.port1
+HEX3[4] <= segment7:digit3.port1
+HEX3[5] <= segment7:digit3.port1
+HEX3[6] <= segment7:digit3.port1
+HEX4[0] <= segment7:digit4.port1
+HEX4[1] <= segment7:digit4.port1
+HEX4[2] <= segment7:digit4.port1
+HEX4[3] <= segment7:digit4.port1
+HEX4[4] <= segment7:digit4.port1
+HEX4[5] <= segment7:digit4.port1
+HEX4[6] <= segment7:digit4.port1
+HEX5[0] <= segment7:digit5.port1
+HEX5[1] <= segment7:digit5.port1
+HEX5[2] <= segment7:digit5.port1
+HEX5[3] <= segment7:digit5.port1
+HEX5[4] <= segment7:digit5.port1
+HEX5[5] <= segment7:digit5.port1
+HEX5[6] <= segment7:digit5.port1
+KEY[0] => Mux7.IN0
+KEY[0] => Add1.IN16
+KEY[0] => Add3.IN16
+KEY[0] => Add4.IN16
+KEY[1] => Mux6.IN0
+KEY[1] => Add1.IN15
+KEY[1] => Add3.IN15
+KEY[1] => Add4.IN15
+KEY[2] => Mux5.IN0
+KEY[2] => Add1.IN14
+KEY[2] => Add3.IN14
+KEY[2] => Add4.IN14
+KEY[3] => Mux4.IN0
+KEY[3] => Add1.IN13
+KEY[3] => Add3.IN13
+KEY[3] => Add4.IN13
+LEDR[0] <= SW[0].DB_MAX_OUTPUT_PORT_TYPE
+LEDR[1] <= SW[1].DB_MAX_OUTPUT_PORT_TYPE
+LEDR[2] <= NUM2[0].DB_MAX_OUTPUT_PORT_TYPE
+LEDR[3] <= NUM2[1].DB_MAX_OUTPUT_PORT_TYPE
+LEDR[4] <= NUM2[2].DB_MAX_OUTPUT_PORT_TYPE
+LEDR[5] <= NUM2[3].DB_MAX_OUTPUT_PORT_TYPE
+LEDR[6] <= NUM1[0].DB_MAX_OUTPUT_PORT_TYPE
+LEDR[7] <= NUM1[1].DB_MAX_OUTPUT_PORT_TYPE
+LEDR[8] <= NUM1[2].DB_MAX_OUTPUT_PORT_TYPE
+LEDR[9] <= NUM1[3].DB_MAX_OUTPUT_PORT_TYPE
+SW[0] => Mux0.IN5
+SW[0] => Mux1.IN5
+SW[0] => Mux2.IN5
+SW[0] => Mux3.IN5
+SW[0] => Mux4.IN5
+SW[0] => Mux5.IN5
+SW[0] => Mux6.IN5
+SW[0] => Mux7.IN5
+SW[0] => LEDR[0].DATAIN
+SW[1] => Mux0.IN4
+SW[1] => Mux1.IN4
+SW[1] => Mux2.IN4
+SW[1] => Mux3.IN4
+SW[1] => Mux4.IN4
+SW[1] => Mux5.IN4
+SW[1] => Mux6.IN4
+SW[1] => Mux7.IN4
+SW[1] => LEDR[1].DATAIN
+SW[2] => NUM2[0].IN1
+SW[3] => NUM2[1].IN1
+SW[4] => NUM2[2].IN1
+SW[5] => NUM2[3].IN1
+SW[6] => NUM1[0].IN1
+SW[7] => NUM1[1].IN1
+SW[8] => NUM1[2].IN1
+SW[9] => NUM1[3].IN1
+
+
+|week_04|segment7:digit0
+data[0] => Decoder0.IN3
+data[1] => Decoder0.IN2
+data[2] => Decoder0.IN1
+data[3] => Decoder0.IN0
+seg[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+seg[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+seg[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+seg[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+seg[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+seg[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+seg[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|week_04|segment7:digit1
+data[0] => Decoder0.IN3
+data[1] => Decoder0.IN2
+data[2] => Decoder0.IN1
+data[3] => Decoder0.IN0
+seg[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+seg[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+seg[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+seg[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+seg[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+seg[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+seg[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|week_04|segment7:digit2
+data[0] => Decoder0.IN3
+data[1] => Decoder0.IN2
+data[2] => Decoder0.IN1
+data[3] => Decoder0.IN0
+seg[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+seg[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+seg[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+seg[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+seg[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+seg[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+seg[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|week_04|segment7:digit3
+data[0] => Decoder0.IN3
+data[1] => Decoder0.IN2
+data[2] => Decoder0.IN1
+data[3] => Decoder0.IN0
+seg[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+seg[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+seg[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+seg[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+seg[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+seg[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+seg[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|week_04|segment7:digit4
+data[0] => Decoder0.IN3
+data[1] => Decoder0.IN2
+data[2] => Decoder0.IN1
+data[3] => Decoder0.IN0
+seg[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+seg[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+seg[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+seg[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+seg[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+seg[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+seg[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|week_04|segment7:digit5
+data[0] => Decoder0.IN3
+data[1] => Decoder0.IN2
+data[2] => Decoder0.IN1
+data[3] => Decoder0.IN0
+seg[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+seg[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+seg[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+seg[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+seg[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+seg[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+seg[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
