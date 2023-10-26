@@ -59,11 +59,12 @@ module week_04(
 	
 	always @(KEY, SW[1:0], NUM1, NUM2) begin
 		case ({SW[1:0]})
-			2'b00: NUM3 = {4'b0000, ~KEY[3:0]};
-			2'b01: NUM3 = NUM1 + NUM2 + {4'b0000, ~KEY[3:0]};
-			2'b10: NUM3 = NUM1 - NUM2 + {4'b0000, ~KEY[3:0]};
-			2'b11: NUM3 = NUM1 * NUM2 + {4'b0000, ~KEY[3:0]};
+			2'b01: NUM3 = NUM1 + NUM2;
+			2'b10: NUM3 = NUM1 - NUM2;
+			2'b11: NUM3 = NUM1 * NUM2;
+			default:;
 		endcase
+		NUM3 = NUM3 + {4'b0000, ~KEY[3:0]};
 	end
 
 endmodule

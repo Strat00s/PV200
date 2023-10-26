@@ -1,0 +1,14 @@
+// PWM module
+module pwm(
+	input 		clk,   // input clock
+	input [7:0] duty,  // duty cycle
+	output reg 	out	 // generated signal
+	);
+
+// TASK 4: write the code for PWM
+	
+	
+endmodule
+	
+	
+	

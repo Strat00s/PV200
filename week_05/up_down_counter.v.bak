@@ -1,0 +1,12 @@
+// bidirectional counter with asynchronous reset
+
+module up_down_counter(
+	input direction,  // 1 - up, 0 - down
+	input clk,			// clock, active in rising edge
+	input arst,		   // asynchronous reset
+	output reg [7:0] data // output data
+	);
+	
+	//TASK 2: write the code
+	
+endmodule
