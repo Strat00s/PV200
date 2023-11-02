@@ -8,18 +8,18 @@ module pwm(
 
 	
 	reg [7:0] counter;
-	
 	// TASK 1b: something is missing in this code from last week
 	
-	always @(posedge clk)
-	begin
-     counter <= counter + 8'd1;
-  
-     if ((~|duty)|(counter > duty))
-	    out <= 1'b0;
-	  else
-	    out <= 1'b1;	  
-	  end
+	always @(posedge clk) begin
+		counter <= counter + 8'd1;
+	 
+		if (clken == 1) begin
+			if ((~|duty)|(counter > duty))
+				out <= 1'b0;
+			else
+				out <= 1'b1;	  
+			end
+		end
 	  
 endmodule
 	

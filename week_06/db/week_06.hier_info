@@ -1,0 +1,386 @@
+|week_06
+CLOCK_50 => CLOCK_50.IN8
+HEX0[0] << segment7:digit0.port2
+HEX0[1] << segment7:digit0.port2
+HEX0[2] << segment7:digit0.port2
+HEX0[3] << segment7:digit0.port2
+HEX0[4] << segment7:digit0.port2
+HEX0[5] << segment7:digit0.port2
+HEX0[6] << segment7:digit0.port2
+HEX1[0] << segment7:digit1.port2
+HEX1[1] << segment7:digit1.port2
+HEX1[2] << segment7:digit1.port2
+HEX1[3] << segment7:digit1.port2
+HEX1[4] << segment7:digit1.port2
+HEX1[5] << segment7:digit1.port2
+HEX1[6] << segment7:digit1.port2
+HEX2[0] << segment7:digit2.port2
+HEX2[1] << segment7:digit2.port2
+HEX2[2] << segment7:digit2.port2
+HEX2[3] << segment7:digit2.port2
+HEX2[4] << segment7:digit2.port2
+HEX2[5] << segment7:digit2.port2
+HEX2[6] << segment7:digit2.port2
+HEX3[0] << segment7:digit3.port2
+HEX3[1] << segment7:digit3.port2
+HEX3[2] << segment7:digit3.port2
+HEX3[3] << segment7:digit3.port2
+HEX3[4] << segment7:digit3.port2
+HEX3[5] << segment7:digit3.port2
+HEX3[6] << segment7:digit3.port2
+HEX4[0] << segment7:digit4.port2
+HEX4[1] << segment7:digit4.port2
+HEX4[2] << segment7:digit4.port2
+HEX4[3] << segment7:digit4.port2
+HEX4[4] << segment7:digit4.port2
+HEX4[5] << segment7:digit4.port2
+HEX4[6] << segment7:digit4.port2
+HEX5[0] << segment7:digit5.port2
+HEX5[1] << segment7:digit5.port2
+HEX5[2] << segment7:digit5.port2
+HEX5[3] << segment7:digit5.port2
+HEX5[4] << segment7:digit5.port2
+HEX5[5] << segment7:digit5.port2
+HEX5[6] << segment7:digit5.port2
+KEY[0] => ~NO_FANOUT~
+KEY[1] => ~NO_FANOUT~
+KEY[2] => ~NO_FANOUT~
+KEY[3] => ~NO_FANOUT~
+LEDR[0] << SW_debounced[0].DB_MAX_OUTPUT_PORT_TYPE
+LEDR[1] << SW_debounced[1].DB_MAX_OUTPUT_PORT_TYPE
+LEDR[2] << NUM2[0].DB_MAX_OUTPUT_PORT_TYPE
+LEDR[3] << NUM2[1].DB_MAX_OUTPUT_PORT_TYPE
+LEDR[4] << NUM2[2].DB_MAX_OUTPUT_PORT_TYPE
+LEDR[5] << NUM2[3].DB_MAX_OUTPUT_PORT_TYPE
+LEDR[6] << NUM1[0].DB_MAX_OUTPUT_PORT_TYPE
+LEDR[7] << NUM1[1].DB_MAX_OUTPUT_PORT_TYPE
+LEDR[8] << NUM1[2].DB_MAX_OUTPUT_PORT_TYPE
+LEDR[9] << NUM1[3].DB_MAX_OUTPUT_PORT_TYPE
+SW[0] => SW[0].IN1
+SW[1] => SW[1].IN1
+SW[2] => NUM2[0].IN1
+SW[3] => NUM2[1].IN1
+SW[4] => NUM2[2].IN1
+SW[5] => NUM2[3].IN1
+SW[6] => NUM1[0].IN1
+SW[7] => NUM1[1].IN1
+SW[8] => NUM1[2].IN1
+SW[9] => NUM1[3].IN1
+
+
+|week_06|segment7:digit0
+enable => seg.OUTPUTSELECT
+enable => seg.OUTPUTSELECT
+enable => seg.OUTPUTSELECT
+enable => seg.OUTPUTSELECT
+enable => seg.OUTPUTSELECT
+enable => seg.OUTPUTSELECT
+enable => seg.OUTPUTSELECT
+data[0] => Decoder0.IN3
+data[1] => Decoder0.IN2
+data[2] => Decoder0.IN1
+data[3] => Decoder0.IN0
+seg[0] <= seg.DB_MAX_OUTPUT_PORT_TYPE
+seg[1] <= seg.DB_MAX_OUTPUT_PORT_TYPE
+seg[2] <= seg.DB_MAX_OUTPUT_PORT_TYPE
+seg[3] <= seg.DB_MAX_OUTPUT_PORT_TYPE
+seg[4] <= seg.DB_MAX_OUTPUT_PORT_TYPE
+seg[5] <= seg.DB_MAX_OUTPUT_PORT_TYPE
+seg[6] <= seg.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|week_06|segment7:digit1
+enable => seg.OUTPUTSELECT
+enable => seg.OUTPUTSELECT
+enable => seg.OUTPUTSELECT
+enable => seg.OUTPUTSELECT
+enable => seg.OUTPUTSELECT
+enable => seg.OUTPUTSELECT
+enable => seg.OUTPUTSELECT
+data[0] => Decoder0.IN3
+data[1] => Decoder0.IN2
+data[2] => Decoder0.IN1
+data[3] => Decoder0.IN0
+seg[0] <= seg.DB_MAX_OUTPUT_PORT_TYPE
+seg[1] <= seg.DB_MAX_OUTPUT_PORT_TYPE
+seg[2] <= seg.DB_MAX_OUTPUT_PORT_TYPE
+seg[3] <= seg.DB_MAX_OUTPUT_PORT_TYPE
+seg[4] <= seg.DB_MAX_OUTPUT_PORT_TYPE
+seg[5] <= seg.DB_MAX_OUTPUT_PORT_TYPE
+seg[6] <= seg.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|week_06|segment7:digit2
+enable => seg.OUTPUTSELECT
+enable => seg.OUTPUTSELECT
+enable => seg.OUTPUTSELECT
+enable => seg.OUTPUTSELECT
+enable => seg.OUTPUTSELECT
+enable => seg.OUTPUTSELECT
+enable => seg.OUTPUTSELECT
+data[0] => Decoder0.IN3
+data[1] => Decoder0.IN2
+data[2] => Decoder0.IN1
+data[3] => Decoder0.IN0
+seg[0] <= seg.DB_MAX_OUTPUT_PORT_TYPE
+seg[1] <= seg.DB_MAX_OUTPUT_PORT_TYPE
+seg[2] <= seg.DB_MAX_OUTPUT_PORT_TYPE
+seg[3] <= seg.DB_MAX_OUTPUT_PORT_TYPE
+seg[4] <= seg.DB_MAX_OUTPUT_PORT_TYPE
+seg[5] <= seg.DB_MAX_OUTPUT_PORT_TYPE
+seg[6] <= seg.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|week_06|segment7:digit3
+enable => seg.OUTPUTSELECT
+enable => seg.OUTPUTSELECT
+enable => seg.OUTPUTSELECT
+enable => seg.OUTPUTSELECT
+enable => seg.OUTPUTSELECT
+enable => seg.OUTPUTSELECT
+enable => seg.OUTPUTSELECT
+data[0] => Decoder0.IN3
+data[1] => Decoder0.IN2
+data[2] => Decoder0.IN1
+data[3] => Decoder0.IN0
+seg[0] <= seg.DB_MAX_OUTPUT_PORT_TYPE
+seg[1] <= seg.DB_MAX_OUTPUT_PORT_TYPE
+seg[2] <= seg.DB_MAX_OUTPUT_PORT_TYPE
+seg[3] <= seg.DB_MAX_OUTPUT_PORT_TYPE
+seg[4] <= seg.DB_MAX_OUTPUT_PORT_TYPE
+seg[5] <= seg.DB_MAX_OUTPUT_PORT_TYPE
+seg[6] <= seg.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|week_06|segment7:digit4
+enable => seg.OUTPUTSELECT
+enable => seg.OUTPUTSELECT
+enable => seg.OUTPUTSELECT
+enable => seg.OUTPUTSELECT
+enable => seg.OUTPUTSELECT
+enable => seg.OUTPUTSELECT
+enable => seg.OUTPUTSELECT
+data[0] => Decoder0.IN3
+data[1] => Decoder0.IN2
+data[2] => Decoder0.IN1
+data[3] => Decoder0.IN0
+seg[0] <= seg.DB_MAX_OUTPUT_PORT_TYPE
+seg[1] <= seg.DB_MAX_OUTPUT_PORT_TYPE
+seg[2] <= seg.DB_MAX_OUTPUT_PORT_TYPE
+seg[3] <= seg.DB_MAX_OUTPUT_PORT_TYPE
+seg[4] <= seg.DB_MAX_OUTPUT_PORT_TYPE
+seg[5] <= seg.DB_MAX_OUTPUT_PORT_TYPE
+seg[6] <= seg.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|week_06|segment7:digit5
+enable => seg.OUTPUTSELECT
+enable => seg.OUTPUTSELECT
+enable => seg.OUTPUTSELECT
+enable => seg.OUTPUTSELECT
+enable => seg.OUTPUTSELECT
+enable => seg.OUTPUTSELECT
+enable => seg.OUTPUTSELECT
+data[0] => Decoder0.IN3
+data[1] => Decoder0.IN2
+data[2] => Decoder0.IN1
+data[3] => Decoder0.IN0
+seg[0] <= seg.DB_MAX_OUTPUT_PORT_TYPE
+seg[1] <= seg.DB_MAX_OUTPUT_PORT_TYPE
+seg[2] <= seg.DB_MAX_OUTPUT_PORT_TYPE
+seg[3] <= seg.DB_MAX_OUTPUT_PORT_TYPE
+seg[4] <= seg.DB_MAX_OUTPUT_PORT_TYPE
+seg[5] <= seg.DB_MAX_OUTPUT_PORT_TYPE
+seg[6] <= seg.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|week_06|bin2bcd:u10
+bin[0] => bcd[0].DATAIN
+bin[1] => LessThan0.IN6
+bin[1] => Add0.IN6
+bin[1] => bcd.DATAA
+bin[2] => LessThan0.IN5
+bin[2] => Add0.IN5
+bin[2] => bcd.DATAA
+bin[3] => LessThan0.IN4
+bin[3] => Add0.IN4
+bin[3] => bcd.DATAA
+bcd[0] <= bin[0].DB_MAX_OUTPUT_PORT_TYPE
+bcd[1] <= bcd.DB_MAX_OUTPUT_PORT_TYPE
+bcd[2] <= bcd.DB_MAX_OUTPUT_PORT_TYPE
+bcd[3] <= bcd.DB_MAX_OUTPUT_PORT_TYPE
+bcd[4] <= bcd.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|week_06|bin2bcd:u11
+bin[0] => bcd[0].DATAIN
+bin[1] => LessThan0.IN6
+bin[1] => Add0.IN6
+bin[1] => bcd.DATAA
+bin[2] => LessThan0.IN5
+bin[2] => Add0.IN5
+bin[2] => bcd.DATAA
+bin[3] => LessThan0.IN4
+bin[3] => Add0.IN4
+bin[3] => bcd.DATAA
+bcd[0] <= bin[0].DB_MAX_OUTPUT_PORT_TYPE
+bcd[1] <= bcd.DB_MAX_OUTPUT_PORT_TYPE
+bcd[2] <= bcd.DB_MAX_OUTPUT_PORT_TYPE
+bcd[3] <= bcd.DB_MAX_OUTPUT_PORT_TYPE
+bcd[4] <= bcd.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|week_06|timer:u1
+clk => out~reg0.CLK
+clk => cnt[0].CLK
+clk => cnt[1].CLK
+clk => cnt[2].CLK
+clk => cnt[3].CLK
+clk => cnt[4].CLK
+clk => cnt[5].CLK
+clk => cnt[6].CLK
+clk => cnt[7].CLK
+clk => cnt[8].CLK
+out <= out~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|week_06|timer:u2
+clk => out~reg0.CLK
+clk => cnt[0].CLK
+clk => cnt[1].CLK
+clk => cnt[2].CLK
+clk => cnt[3].CLK
+clk => cnt[4].CLK
+clk => cnt[5].CLK
+clk => cnt[6].CLK
+clk => cnt[7].CLK
+clk => cnt[8].CLK
+clk => cnt[9].CLK
+clk => cnt[10].CLK
+clk => cnt[11].CLK
+clk => cnt[12].CLK
+clk => cnt[13].CLK
+clk => cnt[14].CLK
+clk => cnt[15].CLK
+out <= out~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|week_06|pwm:u3
+clk => out~reg0.CLK
+clk => counter[0].CLK
+clk => counter[1].CLK
+clk => counter[2].CLK
+clk => counter[3].CLK
+clk => counter[4].CLK
+clk => counter[5].CLK
+clk => counter[6].CLK
+clk => counter[7].CLK
+clken => out~reg0.ENA
+duty[0] => WideNor0.IN0
+duty[0] => LessThan0.IN8
+duty[1] => WideNor0.IN1
+duty[1] => LessThan0.IN7
+duty[2] => WideNor0.IN2
+duty[2] => LessThan0.IN6
+duty[3] => WideNor0.IN3
+duty[3] => LessThan0.IN5
+duty[4] => WideNor0.IN4
+duty[4] => LessThan0.IN4
+duty[5] => WideNor0.IN5
+duty[5] => LessThan0.IN3
+duty[6] => WideNor0.IN6
+duty[6] => LessThan0.IN2
+duty[7] => WideNor0.IN7
+duty[7] => LessThan0.IN1
+out <= out~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|week_06|find_rise:u4
+clk => last_state.CLK
+clk => out~reg0.CLK
+in => always0.IN1
+in => always0.IN1
+in => last_state.DATAIN
+out <= out~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|week_06|find_rise:u5
+clk => last_state.CLK
+clk => out~reg0.CLK
+in => always0.IN1
+in => always0.IN1
+in => last_state.DATAIN
+out <= out~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|week_06|up_down_counter:u6
+clk => data[0]~reg0.CLK
+clk => data[1]~reg0.CLK
+clk => data[2]~reg0.CLK
+clk => data[3]~reg0.CLK
+clk => data[4]~reg0.CLK
+clk => data[5]~reg0.CLK
+clk => data[6]~reg0.CLK
+clk => data[7]~reg0.CLK
+up => data.OUTPUTSELECT
+up => data.OUTPUTSELECT
+up => data.OUTPUTSELECT
+up => data.OUTPUTSELECT
+up => data.OUTPUTSELECT
+up => data.OUTPUTSELECT
+up => data.OUTPUTSELECT
+up => data.OUTPUTSELECT
+down => data.OUTPUTSELECT
+down => data.OUTPUTSELECT
+down => data.OUTPUTSELECT
+down => data.OUTPUTSELECT
+down => data.OUTPUTSELECT
+down => data.OUTPUTSELECT
+down => data.OUTPUTSELECT
+down => data.OUTPUTSELECT
+data[0] <= data[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data[1] <= data[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data[2] <= data[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data[3] <= data[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data[4] <= data[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data[5] <= data[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data[6] <= data[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data[7] <= data[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|week_06|debouncer:u7
+clk => cnt[0].CLK
+clk => cnt[1].CLK
+clk => cnt[2].CLK
+clk => cnt[3].CLK
+clk => cnt[4].CLK
+clk => cnt[5].CLK
+clk => cnt[6].CLK
+clk => cnt[7].CLK
+clk => cnt[8].CLK
+clk => cnt[9].CLK
+clk => out~reg0.CLK
+clk => enabled.CLK
+clken => ~NO_FANOUT~
+in => always0.IN1
+out <= out~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|week_06|debouncer:u8
+clk => cnt[0].CLK
+clk => cnt[1].CLK
+clk => cnt[2].CLK
+clk => cnt[3].CLK
+clk => cnt[4].CLK
+clk => cnt[5].CLK
+clk => cnt[6].CLK
+clk => cnt[7].CLK
+clk => cnt[8].CLK
+clk => cnt[9].CLK
+clk => out~reg0.CLK
+clk => enabled.CLK
+clken => ~NO_FANOUT~
+in => always0.IN1
+out <= out~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+

@@ -8,6 +8,18 @@ module timer #(parameter WIDTH = 32, parameter PERIOD = 1000)(
 	output reg out
 	);
 	
+	reg [WIDTH - 1:0] cnt = 0;
+	
 // TASK 1a: here is a place for your code
+	always @(posedge clk) begin
+		cnt <= cnt + 1;
+		
+		if (cnt == PERIOD - 2) begin
+			out <= 1;
+			cnt <= 0;
+		end else begin
+			out <= 0;
+		end;
+	end
 
 endmodule

@@ -9,6 +9,14 @@ module up_down_counter(
 	
 	//TASK 2b: here is a place for your code
 	
-	always @(*) data = 8'd8; // it is only for possibility to translate and check TASK 1
+	//always @(*) data = 8'd8; // it is only for possibility to translate and check TASK 1
+	
+	always @(posedge clk) begin
+		if (up) begin
+			data <= data + 1;
+		end else if (down) begin
+			data <= data - 1;
+		end
+	end
 		
 endmodule

@@ -120,17 +120,17 @@ module week_06(
    
 	find_rise u4(
 		.clk(CLOCK_50),
-		.in(~KEY[0]), 	         // for the TASK 2
+		//.in(~KEY[0]), 	         // for the TASK 2
 		//.in(SW[0]),			   // for the TASK 3
-		//.in(SW_debounced[0]), // for the TASK 4b
+		.in(SW_debounced[0]), // for the TASK 4b
 		.out(count_down)
 	);
 
 	find_rise u5(
 		.clk(CLOCK_50),
-		.in(~KEY[1]),  	      // for the TASK 2
+		//.in(~KEY[1]),  	      // for the TASK 2
 		//.in(SW[1]),			   // for the TASK 3
-		//.in(SW_debounced[1]), // for the TASK 4b
+		.in(SW_debounced[1]), // for the TASK 4b
 		.out(count_up)
 	);
 	
