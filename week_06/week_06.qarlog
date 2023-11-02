@@ -1,0 +1,23 @@
+Quartus Prime Archive log --	C:/intelFPGA_lite/qculen/week_06/week_06.qarlog
+
+Archive:	C:/intelFPGA_lite/qculen/week_06/week_06.qar
+Date:		Wed Nov 01 19:13:14 2023
+Quartus Prime		20.1.1 Build 720 11/11/2020 SJ Lite Edition
+
+	=========== Files Selected: ===========
+C:/intelFPGA_lite/qculen/week_06/debouncer.v
+C:/intelFPGA_lite/qculen/week_06/find_rise.v
+C:/intelFPGA_lite/qculen/week_06/pwm.v
+C:/intelFPGA_lite/qculen/week_06/segment7.v
+C:/intelFPGA_lite/qculen/week_06/timer.v
+C:/intelFPGA_lite/qculen/week_06/up_down_counter.v
+C:/intelFPGA_lite/qculen/week_06/week_06.SDC
+C:/intelFPGA_lite/qculen/week_06/week_06.qpf
+C:/intelFPGA_lite/qculen/week_06/week_06.qsf
+C:/intelFPGA_lite/qculen/week_06/week_06.sdc
+C:/intelFPGA_lite/qculen/week_06/week_06.v
+C:/intelFPGA_lite/qculen/week_06/week_06_assignment_defaults.qdf
+	======= Total: 12 files to archive =======
+
+	================ Status: ===============
+All files archived successfully.
