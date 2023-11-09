@@ -1,0 +1,256 @@
+|week_07a
+CLOCK_50 => CLOCK_50.IN5
+HEX0[0] << segment7:digit0.port2
+HEX0[1] << segment7:digit0.port2
+HEX0[2] << segment7:digit0.port2
+HEX0[3] << segment7:digit0.port2
+HEX0[4] << segment7:digit0.port2
+HEX0[5] << segment7:digit0.port2
+HEX0[6] << segment7:digit0.port2
+HEX1[0] << segment7:digit1.port2
+HEX1[1] << segment7:digit1.port2
+HEX1[2] << segment7:digit1.port2
+HEX1[3] << segment7:digit1.port2
+HEX1[4] << segment7:digit1.port2
+HEX1[5] << segment7:digit1.port2
+HEX1[6] << segment7:digit1.port2
+HEX2[0] << segment7:digit2.port2
+HEX2[1] << segment7:digit2.port2
+HEX2[2] << segment7:digit2.port2
+HEX2[3] << segment7:digit2.port2
+HEX2[4] << segment7:digit2.port2
+HEX2[5] << segment7:digit2.port2
+HEX2[6] << segment7:digit2.port2
+HEX3[0] << segment7:digit3.port2
+HEX3[1] << segment7:digit3.port2
+HEX3[2] << segment7:digit3.port2
+HEX3[3] << segment7:digit3.port2
+HEX3[4] << segment7:digit3.port2
+HEX3[5] << segment7:digit3.port2
+HEX3[6] << segment7:digit3.port2
+HEX4[0] << segment7:digit4.port2
+HEX4[1] << segment7:digit4.port2
+HEX4[2] << segment7:digit4.port2
+HEX4[3] << segment7:digit4.port2
+HEX4[4] << segment7:digit4.port2
+HEX4[5] << segment7:digit4.port2
+HEX4[6] << segment7:digit4.port2
+HEX5[0] << segment7:digit5.port2
+HEX5[1] << segment7:digit5.port2
+HEX5[2] << segment7:digit5.port2
+HEX5[3] << segment7:digit5.port2
+HEX5[4] << segment7:digit5.port2
+HEX5[5] << segment7:digit5.port2
+HEX5[6] << segment7:digit5.port2
+KEY[0] => _.IN1
+KEY[1] => _.IN1
+KEY[2] => _.IN1
+KEY[3] => _.IN1
+LEDR[0] << moore_state_machine:u5.progress
+LEDR[1] << moore_state_machine:u5.progress
+LEDR[2] << moore_state_machine:u5.progress
+LEDR[3] << moore_state_machine:u5.progress
+LEDR[4] << <GND>
+LEDR[5] << <GND>
+LEDR[6] << <GND>
+LEDR[7] << <GND>
+LEDR[8] << <GND>
+LEDR[9] << <GND>
+SW[0] => SW[0].IN1
+SW[1] => ~NO_FANOUT~
+SW[2] => NUM2[0].IN1
+SW[3] => NUM2[1].IN1
+SW[4] => NUM2[2].IN1
+SW[5] => NUM2[3].IN1
+SW[6] => NUM1[0].IN1
+SW[7] => NUM1[1].IN1
+SW[8] => NUM1[2].IN1
+SW[9] => NUM1[3].IN1
+
+
+|week_07a|segment7:digit0
+enable => seg.OUTPUTSELECT
+enable => seg.OUTPUTSELECT
+enable => seg.OUTPUTSELECT
+enable => seg.OUTPUTSELECT
+enable => seg.OUTPUTSELECT
+enable => seg.OUTPUTSELECT
+enable => seg.OUTPUTSELECT
+data[0] => Decoder0.IN3
+data[1] => Decoder0.IN2
+data[2] => Decoder0.IN1
+data[3] => Decoder0.IN0
+seg[0] <= seg.DB_MAX_OUTPUT_PORT_TYPE
+seg[1] <= seg.DB_MAX_OUTPUT_PORT_TYPE
+seg[2] <= seg.DB_MAX_OUTPUT_PORT_TYPE
+seg[3] <= seg.DB_MAX_OUTPUT_PORT_TYPE
+seg[4] <= seg.DB_MAX_OUTPUT_PORT_TYPE
+seg[5] <= seg.DB_MAX_OUTPUT_PORT_TYPE
+seg[6] <= seg.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|week_07a|segment7:digit1
+enable => seg.OUTPUTSELECT
+enable => seg.OUTPUTSELECT
+enable => seg.OUTPUTSELECT
+enable => seg.OUTPUTSELECT
+enable => seg.OUTPUTSELECT
+enable => seg.OUTPUTSELECT
+enable => seg.OUTPUTSELECT
+data[0] => Decoder0.IN3
+data[1] => Decoder0.IN2
+data[2] => Decoder0.IN1
+data[3] => Decoder0.IN0
+seg[0] <= seg.DB_MAX_OUTPUT_PORT_TYPE
+seg[1] <= seg.DB_MAX_OUTPUT_PORT_TYPE
+seg[2] <= seg.DB_MAX_OUTPUT_PORT_TYPE
+seg[3] <= seg.DB_MAX_OUTPUT_PORT_TYPE
+seg[4] <= seg.DB_MAX_OUTPUT_PORT_TYPE
+seg[5] <= seg.DB_MAX_OUTPUT_PORT_TYPE
+seg[6] <= seg.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|week_07a|segment7:digit2
+enable => seg.OUTPUTSELECT
+enable => seg.OUTPUTSELECT
+enable => seg.OUTPUTSELECT
+enable => seg.OUTPUTSELECT
+enable => seg.OUTPUTSELECT
+enable => seg.OUTPUTSELECT
+enable => seg.OUTPUTSELECT
+data[0] => Decoder0.IN3
+data[1] => Decoder0.IN2
+data[2] => Decoder0.IN1
+data[3] => Decoder0.IN0
+seg[0] <= seg.DB_MAX_OUTPUT_PORT_TYPE
+seg[1] <= seg.DB_MAX_OUTPUT_PORT_TYPE
+seg[2] <= seg.DB_MAX_OUTPUT_PORT_TYPE
+seg[3] <= seg.DB_MAX_OUTPUT_PORT_TYPE
+seg[4] <= seg.DB_MAX_OUTPUT_PORT_TYPE
+seg[5] <= seg.DB_MAX_OUTPUT_PORT_TYPE
+seg[6] <= seg.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|week_07a|segment7:digit3
+enable => seg.OUTPUTSELECT
+enable => seg.OUTPUTSELECT
+enable => seg.OUTPUTSELECT
+enable => seg.OUTPUTSELECT
+enable => seg.OUTPUTSELECT
+enable => seg.OUTPUTSELECT
+enable => seg.OUTPUTSELECT
+data[0] => Decoder0.IN3
+data[1] => Decoder0.IN2
+data[2] => Decoder0.IN1
+data[3] => Decoder0.IN0
+seg[0] <= seg.DB_MAX_OUTPUT_PORT_TYPE
+seg[1] <= seg.DB_MAX_OUTPUT_PORT_TYPE
+seg[2] <= seg.DB_MAX_OUTPUT_PORT_TYPE
+seg[3] <= seg.DB_MAX_OUTPUT_PORT_TYPE
+seg[4] <= seg.DB_MAX_OUTPUT_PORT_TYPE
+seg[5] <= seg.DB_MAX_OUTPUT_PORT_TYPE
+seg[6] <= seg.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|week_07a|segment7:digit4
+enable => seg.OUTPUTSELECT
+enable => seg.OUTPUTSELECT
+enable => seg.OUTPUTSELECT
+enable => seg.OUTPUTSELECT
+enable => seg.OUTPUTSELECT
+enable => seg.OUTPUTSELECT
+enable => seg.OUTPUTSELECT
+data[0] => Decoder0.IN3
+data[1] => Decoder0.IN2
+data[2] => Decoder0.IN1
+data[3] => Decoder0.IN0
+seg[0] <= seg.DB_MAX_OUTPUT_PORT_TYPE
+seg[1] <= seg.DB_MAX_OUTPUT_PORT_TYPE
+seg[2] <= seg.DB_MAX_OUTPUT_PORT_TYPE
+seg[3] <= seg.DB_MAX_OUTPUT_PORT_TYPE
+seg[4] <= seg.DB_MAX_OUTPUT_PORT_TYPE
+seg[5] <= seg.DB_MAX_OUTPUT_PORT_TYPE
+seg[6] <= seg.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|week_07a|segment7:digit5
+enable => seg.OUTPUTSELECT
+enable => seg.OUTPUTSELECT
+enable => seg.OUTPUTSELECT
+enable => seg.OUTPUTSELECT
+enable => seg.OUTPUTSELECT
+enable => seg.OUTPUTSELECT
+enable => seg.OUTPUTSELECT
+data[0] => Decoder0.IN3
+data[1] => Decoder0.IN2
+data[2] => Decoder0.IN1
+data[3] => Decoder0.IN0
+seg[0] <= seg.DB_MAX_OUTPUT_PORT_TYPE
+seg[1] <= seg.DB_MAX_OUTPUT_PORT_TYPE
+seg[2] <= seg.DB_MAX_OUTPUT_PORT_TYPE
+seg[3] <= seg.DB_MAX_OUTPUT_PORT_TYPE
+seg[4] <= seg.DB_MAX_OUTPUT_PORT_TYPE
+seg[5] <= seg.DB_MAX_OUTPUT_PORT_TYPE
+seg[6] <= seg.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|week_07a|find_rise:u1
+clk => old.CLK
+clk => out~reg0.CLK
+in => out.IN1
+in => old.DATAIN
+out <= out~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|week_07a|find_rise:u2
+clk => old.CLK
+clk => out~reg0.CLK
+in => out.IN1
+in => old.DATAIN
+out <= out~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|week_07a|find_rise:u3
+clk => old.CLK
+clk => out~reg0.CLK
+in => out.IN1
+in => old.DATAIN
+out <= out~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|week_07a|find_rise:u4
+clk => old.CLK
+clk => out~reg0.CLK
+in => out.IN1
+in => old.DATAIN
+out <= out~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|week_07a|moore_state_machine:u5
+clk => unlock~reg0.CLK
+clk => state~3.DATAIN
+reset => unlock~reg0.ACLR
+reset => state~5.DATAIN
+keys[0] => Equal0.IN0
+keys[0] => Equal1.IN3
+keys[0] => Equal2.IN3
+keys[0] => Equal3.IN3
+keys[1] => Equal0.IN3
+keys[1] => Equal1.IN2
+keys[1] => Equal2.IN2
+keys[1] => Equal3.IN0
+keys[2] => Equal0.IN2
+keys[2] => Equal1.IN0
+keys[2] => Equal2.IN1
+keys[2] => Equal3.IN2
+keys[3] => Equal0.IN1
+keys[3] => Equal1.IN1
+keys[3] => Equal2.IN0
+keys[3] => Equal3.IN1
+unlock <= unlock~reg0.DB_MAX_OUTPUT_PORT_TYPE
+progress[0] <= progress[0].DB_MAX_OUTPUT_PORT_TYPE
+progress[1] <= progress.DB_MAX_OUTPUT_PORT_TYPE
+progress[2] <= progress.DB_MAX_OUTPUT_PORT_TYPE
+progress[3] <= progress[3].DB_MAX_OUTPUT_PORT_TYPE
+
+

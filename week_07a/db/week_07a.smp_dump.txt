@@ -1,0 +1,8 @@
+
+State Machine - |week_07a|moore_state_machine:u5|state
+Name state.0111 state.0011 state.0001 state.1111 state.0000 
+state.0000 0 0 0 0 0 
+state.0001 0 0 1 0 1 
+state.0011 0 1 0 0 1 
+state.0111 1 0 0 0 1 
+state.1111 0 0 0 1 1 

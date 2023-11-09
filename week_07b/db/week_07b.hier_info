@@ -1,0 +1,541 @@
+|week_07b
+CLOCK_50 => CLOCK_50.IN12
+HEX0[0] <= segment7:digit0.port2
+HEX0[1] <= segment7:digit0.port2
+HEX0[2] <= segment7:digit0.port2
+HEX0[3] <= segment7:digit0.port2
+HEX0[4] <= segment7:digit0.port2
+HEX0[5] <= segment7:digit0.port2
+HEX0[6] <= segment7:digit0.port2
+HEX1[0] <= segment7:digit1.port2
+HEX1[1] <= segment7:digit1.port2
+HEX1[2] <= segment7:digit1.port2
+HEX1[3] <= segment7:digit1.port2
+HEX1[4] <= segment7:digit1.port2
+HEX1[5] <= segment7:digit1.port2
+HEX1[6] <= segment7:digit1.port2
+HEX2[0] <= segment7:digit2.port2
+HEX2[1] <= segment7:digit2.port2
+HEX2[2] <= segment7:digit2.port2
+HEX2[3] <= segment7:digit2.port2
+HEX2[4] <= segment7:digit2.port2
+HEX2[5] <= segment7:digit2.port2
+HEX2[6] <= segment7:digit2.port2
+HEX3[0] <= segment7:digit3.port2
+HEX3[1] <= segment7:digit3.port2
+HEX3[2] <= segment7:digit3.port2
+HEX3[3] <= segment7:digit3.port2
+HEX3[4] <= segment7:digit3.port2
+HEX3[5] <= segment7:digit3.port2
+HEX3[6] <= segment7:digit3.port2
+HEX4[0] <= segment7:digit4.port2
+HEX4[1] <= segment7:digit4.port2
+HEX4[2] <= segment7:digit4.port2
+HEX4[3] <= segment7:digit4.port2
+HEX4[4] <= segment7:digit4.port2
+HEX4[5] <= segment7:digit4.port2
+HEX4[6] <= segment7:digit4.port2
+HEX5[0] <= segment7:digit5.port2
+HEX5[1] <= segment7:digit5.port2
+HEX5[2] <= segment7:digit5.port2
+HEX5[3] <= segment7:digit5.port2
+HEX5[4] <= segment7:digit5.port2
+HEX5[5] <= segment7:digit5.port2
+HEX5[6] <= segment7:digit5.port2
+KEY[0] => _.IN1
+KEY[1] => _.IN1
+KEY[2] => _.IN1
+KEY[3] => _.IN1
+LEDR[0] <= reset.DB_MAX_OUTPUT_PORT_TYPE
+LEDR[1] <= enable.DB_MAX_OUTPUT_PORT_TYPE
+LEDR[2] <= freeze.DB_MAX_OUTPUT_PORT_TYPE
+LEDR[3] <= <GND>
+LEDR[4] <= <GND>
+LEDR[5] <= <GND>
+LEDR[6] <= <GND>
+LEDR[7] <= <GND>
+LEDR[8] <= <GND>
+LEDR[9] <= <GND>
+SW[0] => ~NO_FANOUT~
+SW[1] => ~NO_FANOUT~
+SW[2] => ~NO_FANOUT~
+SW[3] => ~NO_FANOUT~
+SW[4] => ~NO_FANOUT~
+SW[5] => ~NO_FANOUT~
+SW[6] => ~NO_FANOUT~
+SW[7] => ~NO_FANOUT~
+SW[8] => ~NO_FANOUT~
+SW[9] => ~NO_FANOUT~
+
+
+|week_07b|segment7:digit0
+enable => seg.OUTPUTSELECT
+enable => seg.OUTPUTSELECT
+enable => seg.OUTPUTSELECT
+enable => seg.OUTPUTSELECT
+enable => seg.OUTPUTSELECT
+enable => seg.OUTPUTSELECT
+enable => seg.OUTPUTSELECT
+data[0] => Decoder0.IN3
+data[1] => Decoder0.IN2
+data[2] => Decoder0.IN1
+data[3] => Decoder0.IN0
+seg[0] <= seg.DB_MAX_OUTPUT_PORT_TYPE
+seg[1] <= seg.DB_MAX_OUTPUT_PORT_TYPE
+seg[2] <= seg.DB_MAX_OUTPUT_PORT_TYPE
+seg[3] <= seg.DB_MAX_OUTPUT_PORT_TYPE
+seg[4] <= seg.DB_MAX_OUTPUT_PORT_TYPE
+seg[5] <= seg.DB_MAX_OUTPUT_PORT_TYPE
+seg[6] <= seg.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|week_07b|segment7:digit1
+enable => seg.OUTPUTSELECT
+enable => seg.OUTPUTSELECT
+enable => seg.OUTPUTSELECT
+enable => seg.OUTPUTSELECT
+enable => seg.OUTPUTSELECT
+enable => seg.OUTPUTSELECT
+enable => seg.OUTPUTSELECT
+data[0] => Decoder0.IN3
+data[1] => Decoder0.IN2
+data[2] => Decoder0.IN1
+data[3] => Decoder0.IN0
+seg[0] <= seg.DB_MAX_OUTPUT_PORT_TYPE
+seg[1] <= seg.DB_MAX_OUTPUT_PORT_TYPE
+seg[2] <= seg.DB_MAX_OUTPUT_PORT_TYPE
+seg[3] <= seg.DB_MAX_OUTPUT_PORT_TYPE
+seg[4] <= seg.DB_MAX_OUTPUT_PORT_TYPE
+seg[5] <= seg.DB_MAX_OUTPUT_PORT_TYPE
+seg[6] <= seg.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|week_07b|segment7:digit2
+enable => seg.OUTPUTSELECT
+enable => seg.OUTPUTSELECT
+enable => seg.OUTPUTSELECT
+enable => seg.OUTPUTSELECT
+enable => seg.OUTPUTSELECT
+enable => seg.OUTPUTSELECT
+enable => seg.OUTPUTSELECT
+data[0] => Decoder0.IN3
+data[1] => Decoder0.IN2
+data[2] => Decoder0.IN1
+data[3] => Decoder0.IN0
+seg[0] <= seg.DB_MAX_OUTPUT_PORT_TYPE
+seg[1] <= seg.DB_MAX_OUTPUT_PORT_TYPE
+seg[2] <= seg.DB_MAX_OUTPUT_PORT_TYPE
+seg[3] <= seg.DB_MAX_OUTPUT_PORT_TYPE
+seg[4] <= seg.DB_MAX_OUTPUT_PORT_TYPE
+seg[5] <= seg.DB_MAX_OUTPUT_PORT_TYPE
+seg[6] <= seg.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|week_07b|segment7:digit3
+enable => seg.OUTPUTSELECT
+enable => seg.OUTPUTSELECT
+enable => seg.OUTPUTSELECT
+enable => seg.OUTPUTSELECT
+enable => seg.OUTPUTSELECT
+enable => seg.OUTPUTSELECT
+enable => seg.OUTPUTSELECT
+data[0] => Decoder0.IN3
+data[1] => Decoder0.IN2
+data[2] => Decoder0.IN1
+data[3] => Decoder0.IN0
+seg[0] <= seg.DB_MAX_OUTPUT_PORT_TYPE
+seg[1] <= seg.DB_MAX_OUTPUT_PORT_TYPE
+seg[2] <= seg.DB_MAX_OUTPUT_PORT_TYPE
+seg[3] <= seg.DB_MAX_OUTPUT_PORT_TYPE
+seg[4] <= seg.DB_MAX_OUTPUT_PORT_TYPE
+seg[5] <= seg.DB_MAX_OUTPUT_PORT_TYPE
+seg[6] <= seg.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|week_07b|segment7:digit4
+enable => seg.OUTPUTSELECT
+enable => seg.OUTPUTSELECT
+enable => seg.OUTPUTSELECT
+enable => seg.OUTPUTSELECT
+enable => seg.OUTPUTSELECT
+enable => seg.OUTPUTSELECT
+enable => seg.OUTPUTSELECT
+data[0] => Decoder0.IN3
+data[1] => Decoder0.IN2
+data[2] => Decoder0.IN1
+data[3] => Decoder0.IN0
+seg[0] <= seg.DB_MAX_OUTPUT_PORT_TYPE
+seg[1] <= seg.DB_MAX_OUTPUT_PORT_TYPE
+seg[2] <= seg.DB_MAX_OUTPUT_PORT_TYPE
+seg[3] <= seg.DB_MAX_OUTPUT_PORT_TYPE
+seg[4] <= seg.DB_MAX_OUTPUT_PORT_TYPE
+seg[5] <= seg.DB_MAX_OUTPUT_PORT_TYPE
+seg[6] <= seg.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|week_07b|segment7:digit5
+enable => seg.OUTPUTSELECT
+enable => seg.OUTPUTSELECT
+enable => seg.OUTPUTSELECT
+enable => seg.OUTPUTSELECT
+enable => seg.OUTPUTSELECT
+enable => seg.OUTPUTSELECT
+enable => seg.OUTPUTSELECT
+data[0] => Decoder0.IN3
+data[1] => Decoder0.IN2
+data[2] => Decoder0.IN1
+data[3] => Decoder0.IN0
+seg[0] <= seg.DB_MAX_OUTPUT_PORT_TYPE
+seg[1] <= seg.DB_MAX_OUTPUT_PORT_TYPE
+seg[2] <= seg.DB_MAX_OUTPUT_PORT_TYPE
+seg[3] <= seg.DB_MAX_OUTPUT_PORT_TYPE
+seg[4] <= seg.DB_MAX_OUTPUT_PORT_TYPE
+seg[5] <= seg.DB_MAX_OUTPUT_PORT_TYPE
+seg[6] <= seg.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|week_07b|find_rise:u1
+clk => out~reg0.CLK
+clk => old.CLK
+in => out.IN1
+in => old.DATAIN
+out <= out~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|week_07b|find_rise:u2
+clk => out~reg0.CLK
+clk => old.CLK
+in => out.IN1
+in => old.DATAIN
+out <= out~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|week_07b|find_rise:u3
+clk => out~reg0.CLK
+clk => old.CLK
+in => out.IN1
+in => old.DATAIN
+out <= out~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|week_07b|find_rise:u4
+clk => out~reg0.CLK
+clk => old.CLK
+in => out.IN1
+in => old.DATAIN
+out <= out~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|week_07b|timer:u5
+clk => out~reg0.CLK
+clk => timer[0].CLK
+clk => timer[1].CLK
+clk => timer[2].CLK
+clk => timer[3].CLK
+clk => timer[4].CLK
+clk => timer[5].CLK
+clk => timer[6].CLK
+clk => timer[7].CLK
+clk => timer[8].CLK
+clk => timer[9].CLK
+clk => timer[10].CLK
+clk => timer[11].CLK
+clk => timer[12].CLK
+clk => timer[13].CLK
+clk => timer[14].CLK
+clk => timer[15].CLK
+clk => timer[16].CLK
+clk => timer[17].CLK
+clk => timer[18].CLK
+enable => timer.OUTPUTSELECT
+enable => timer.OUTPUTSELECT
+enable => timer.OUTPUTSELECT
+enable => timer.OUTPUTSELECT
+enable => timer.OUTPUTSELECT
+enable => timer.OUTPUTSELECT
+enable => timer.OUTPUTSELECT
+enable => timer.OUTPUTSELECT
+enable => timer.OUTPUTSELECT
+enable => timer.OUTPUTSELECT
+enable => timer.OUTPUTSELECT
+enable => timer.OUTPUTSELECT
+enable => timer.OUTPUTSELECT
+enable => timer.OUTPUTSELECT
+enable => timer.OUTPUTSELECT
+enable => timer.OUTPUTSELECT
+enable => timer.OUTPUTSELECT
+enable => timer.OUTPUTSELECT
+enable => timer.OUTPUTSELECT
+enable => out.OUTPUTSELECT
+reset => timer.OUTPUTSELECT
+reset => timer.OUTPUTSELECT
+reset => timer.OUTPUTSELECT
+reset => timer.OUTPUTSELECT
+reset => timer.OUTPUTSELECT
+reset => timer.OUTPUTSELECT
+reset => timer.OUTPUTSELECT
+reset => timer.OUTPUTSELECT
+reset => timer.OUTPUTSELECT
+reset => timer.OUTPUTSELECT
+reset => timer.OUTPUTSELECT
+reset => timer.OUTPUTSELECT
+reset => timer.OUTPUTSELECT
+reset => timer.OUTPUTSELECT
+reset => timer.OUTPUTSELECT
+reset => timer.OUTPUTSELECT
+reset => timer.OUTPUTSELECT
+reset => timer.OUTPUTSELECT
+reset => timer.OUTPUTSELECT
+reset => out.OUTPUTSELECT
+out <= out~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|week_07b|bcd_counter:u6
+clk => c.CLK
+clk => carry~reg0.CLK
+clk => data[0]~reg0.CLK
+clk => data[1]~reg0.CLK
+clk => data[2]~reg0.CLK
+clk => data[3]~reg0.CLK
+clk => cnt[0].CLK
+clk => cnt[1].CLK
+clk => cnt[2].CLK
+clk => cnt[3].CLK
+clken => cnt.OUTPUTSELECT
+clken => cnt.OUTPUTSELECT
+clken => cnt.OUTPUTSELECT
+clken => cnt.OUTPUTSELECT
+clken => c.OUTPUTSELECT
+reset => cnt.OUTPUTSELECT
+reset => cnt.OUTPUTSELECT
+reset => cnt.OUTPUTSELECT
+reset => cnt.OUTPUTSELECT
+reset => data.OUTPUTSELECT
+reset => data.OUTPUTSELECT
+reset => data.OUTPUTSELECT
+reset => data.OUTPUTSELECT
+reset => carry.OUTPUTSELECT
+reset => c.OUTPUTSELECT
+freeze => data.OUTPUTSELECT
+freeze => data.OUTPUTSELECT
+freeze => data.OUTPUTSELECT
+freeze => data.OUTPUTSELECT
+freeze => carry.OUTPUTSELECT
+data[0] <= data[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data[1] <= data[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data[2] <= data[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data[3] <= data[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+carry <= carry~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|week_07b|bcd_counter:u7
+clk => c.CLK
+clk => carry~reg0.CLK
+clk => data[0]~reg0.CLK
+clk => data[1]~reg0.CLK
+clk => data[2]~reg0.CLK
+clk => data[3]~reg0.CLK
+clk => cnt[0].CLK
+clk => cnt[1].CLK
+clk => cnt[2].CLK
+clk => cnt[3].CLK
+clken => cnt.OUTPUTSELECT
+clken => cnt.OUTPUTSELECT
+clken => cnt.OUTPUTSELECT
+clken => cnt.OUTPUTSELECT
+clken => c.OUTPUTSELECT
+reset => cnt.OUTPUTSELECT
+reset => cnt.OUTPUTSELECT
+reset => cnt.OUTPUTSELECT
+reset => cnt.OUTPUTSELECT
+reset => data.OUTPUTSELECT
+reset => data.OUTPUTSELECT
+reset => data.OUTPUTSELECT
+reset => data.OUTPUTSELECT
+reset => carry.OUTPUTSELECT
+reset => c.OUTPUTSELECT
+freeze => data.OUTPUTSELECT
+freeze => data.OUTPUTSELECT
+freeze => data.OUTPUTSELECT
+freeze => data.OUTPUTSELECT
+freeze => carry.OUTPUTSELECT
+data[0] <= data[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data[1] <= data[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data[2] <= data[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data[3] <= data[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+carry <= carry~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|week_07b|bcd_counter:u8
+clk => c.CLK
+clk => carry~reg0.CLK
+clk => data[0]~reg0.CLK
+clk => data[1]~reg0.CLK
+clk => data[2]~reg0.CLK
+clk => data[3]~reg0.CLK
+clk => cnt[0].CLK
+clk => cnt[1].CLK
+clk => cnt[2].CLK
+clk => cnt[3].CLK
+clken => cnt.OUTPUTSELECT
+clken => cnt.OUTPUTSELECT
+clken => cnt.OUTPUTSELECT
+clken => cnt.OUTPUTSELECT
+clken => c.OUTPUTSELECT
+reset => cnt.OUTPUTSELECT
+reset => cnt.OUTPUTSELECT
+reset => cnt.OUTPUTSELECT
+reset => cnt.OUTPUTSELECT
+reset => data.OUTPUTSELECT
+reset => data.OUTPUTSELECT
+reset => data.OUTPUTSELECT
+reset => data.OUTPUTSELECT
+reset => carry.OUTPUTSELECT
+reset => c.OUTPUTSELECT
+freeze => data.OUTPUTSELECT
+freeze => data.OUTPUTSELECT
+freeze => data.OUTPUTSELECT
+freeze => data.OUTPUTSELECT
+freeze => carry.OUTPUTSELECT
+data[0] <= data[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data[1] <= data[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data[2] <= data[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data[3] <= data[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+carry <= carry~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|week_07b|bcd_counter:u9
+clk => c.CLK
+clk => carry~reg0.CLK
+clk => data[0]~reg0.CLK
+clk => data[1]~reg0.CLK
+clk => data[2]~reg0.CLK
+clk => data[3]~reg0.CLK
+clk => cnt[0].CLK
+clk => cnt[1].CLK
+clk => cnt[2].CLK
+clk => cnt[3].CLK
+clken => cnt.OUTPUTSELECT
+clken => cnt.OUTPUTSELECT
+clken => cnt.OUTPUTSELECT
+clken => cnt.OUTPUTSELECT
+clken => c.OUTPUTSELECT
+reset => cnt.OUTPUTSELECT
+reset => cnt.OUTPUTSELECT
+reset => cnt.OUTPUTSELECT
+reset => cnt.OUTPUTSELECT
+reset => data.OUTPUTSELECT
+reset => data.OUTPUTSELECT
+reset => data.OUTPUTSELECT
+reset => data.OUTPUTSELECT
+reset => carry.OUTPUTSELECT
+reset => c.OUTPUTSELECT
+freeze => data.OUTPUTSELECT
+freeze => data.OUTPUTSELECT
+freeze => data.OUTPUTSELECT
+freeze => data.OUTPUTSELECT
+freeze => carry.OUTPUTSELECT
+data[0] <= data[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data[1] <= data[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data[2] <= data[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data[3] <= data[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+carry <= carry~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|week_07b|bcd_counter:u10
+clk => c.CLK
+clk => carry~reg0.CLK
+clk => data[0]~reg0.CLK
+clk => data[1]~reg0.CLK
+clk => data[2]~reg0.CLK
+clk => data[3]~reg0.CLK
+clk => cnt[0].CLK
+clk => cnt[1].CLK
+clk => cnt[2].CLK
+clk => cnt[3].CLK
+clken => cnt.OUTPUTSELECT
+clken => cnt.OUTPUTSELECT
+clken => cnt.OUTPUTSELECT
+clken => cnt.OUTPUTSELECT
+clken => c.OUTPUTSELECT
+reset => cnt.OUTPUTSELECT
+reset => cnt.OUTPUTSELECT
+reset => cnt.OUTPUTSELECT
+reset => cnt.OUTPUTSELECT
+reset => data.OUTPUTSELECT
+reset => data.OUTPUTSELECT
+reset => data.OUTPUTSELECT
+reset => data.OUTPUTSELECT
+reset => carry.OUTPUTSELECT
+reset => c.OUTPUTSELECT
+freeze => data.OUTPUTSELECT
+freeze => data.OUTPUTSELECT
+freeze => data.OUTPUTSELECT
+freeze => data.OUTPUTSELECT
+freeze => carry.OUTPUTSELECT
+data[0] <= data[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data[1] <= data[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data[2] <= data[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data[3] <= data[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+carry <= carry~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|week_07b|bcd_counter:u11
+clk => c.CLK
+clk => carry~reg0.CLK
+clk => data[0]~reg0.CLK
+clk => data[1]~reg0.CLK
+clk => data[2]~reg0.CLK
+clk => data[3]~reg0.CLK
+clk => cnt[0].CLK
+clk => cnt[1].CLK
+clk => cnt[2].CLK
+clk => cnt[3].CLK
+clken => cnt.OUTPUTSELECT
+clken => cnt.OUTPUTSELECT
+clken => cnt.OUTPUTSELECT
+clken => cnt.OUTPUTSELECT
+clken => c.OUTPUTSELECT
+reset => cnt.OUTPUTSELECT
+reset => cnt.OUTPUTSELECT
+reset => cnt.OUTPUTSELECT
+reset => cnt.OUTPUTSELECT
+reset => data.OUTPUTSELECT
+reset => data.OUTPUTSELECT
+reset => data.OUTPUTSELECT
+reset => data.OUTPUTSELECT
+reset => carry.OUTPUTSELECT
+reset => c.OUTPUTSELECT
+freeze => data.OUTPUTSELECT
+freeze => data.OUTPUTSELECT
+freeze => data.OUTPUTSELECT
+freeze => data.OUTPUTSELECT
+freeze => carry.OUTPUTSELECT
+data[0] <= data[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data[1] <= data[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data[2] <= data[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data[3] <= data[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+carry <= carry~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|week_07b|moore_state_machine:u12
+clk => freeze~reg0.CLK
+clk => reset~reg0.CLK
+clk => enable~reg0.CLK
+keys[0] => Equal0.IN0
+keys[0] => Equal1.IN3
+keys[0] => Equal2.IN3
+keys[1] => Equal0.IN3
+keys[1] => Equal1.IN0
+keys[1] => Equal2.IN2
+keys[2] => Equal0.IN2
+keys[2] => Equal1.IN2
+keys[2] => Equal2.IN0
+keys[3] => Equal0.IN1
+keys[3] => Equal1.IN1
+keys[3] => Equal2.IN1
+reset <= reset~reg0.DB_MAX_OUTPUT_PORT_TYPE
+enable <= enable~reg0.DB_MAX_OUTPUT_PORT_TYPE
+freeze <= freeze~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+

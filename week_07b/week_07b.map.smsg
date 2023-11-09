@@ -1,0 +1,2 @@
+Info (10281): Verilog HDL Declaration information at moore_state_machine.v(12): object "reset" differs only in case from object "RESET" in the same scope File: C:/intelFPGA_lite/xbastyr/PV200/week_07b/moore_state_machine.v Line: 12
+Info (10281): Verilog HDL Declaration information at moore_state_machine.v(15): object "freeze" differs only in case from object "FREEZE" in the same scope File: C:/intelFPGA_lite/xbastyr/PV200/week_07b/moore_state_machine.v Line: 15
