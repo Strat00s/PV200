@@ -1,0 +1,55 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/intelFPGA_lite/qculen/week_08b
+vram
+Z1 !s110 1700145763
+!i10b 1
+!s100 2W2IlnHljgZ9m[5mhadEK3
+Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
+I2o3H`ML47A9>k?@[4zDIa3
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1700144164
+8ram.v
+Fram.v
+!i122 0
+L0 3 27
+Z4 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z5 !s108 1700145763.000000
+!s107 ram_tb.v|ram.v|
+Z6 !s90 -reportprogress|300|ram.v|ram_tb.v|
+!i113 1
+Z7 tCvgOpt 0
+vram_tb
+R1
+!i10b 1
+!s100 eP9bI;b:EZ8co]OCODo<O0
+R2
+I@`zV1a8ARUz]>DL_T8Q=<0
+R3
+R0
+w1700145650
+8ram_tb.v
+Fram_tb.v
+!i122 0
+L0 3 34
+R4
+r1
+!s85 0
+31
+R5
+Z8 !s107 ram_tb.v|ram.v|
+R6
+!i113 1
+R7
