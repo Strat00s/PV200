@@ -1,0 +1,101 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1100mV 85C Model Setup 'running_light:m1|out[1]'
+Slack : -10.063
+TNS   : -96.876
+
+Type  : Slow 1100mV 85C Model Setup 'KEY[0]'
+Slack : -5.168
+TNS   : -14.166
+
+Type  : Slow 1100mV 85C Model Hold 'KEY[0]'
+Slack : -7.853
+TNS   : -24.371
+
+Type  : Slow 1100mV 85C Model Hold 'running_light:m1|out[1]'
+Slack : 0.684
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'KEY[0]'
+Slack : -0.405
+TNS   : -5.722
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'running_light:m1|out[1]'
+Slack : 0.289
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Setup 'running_light:m1|out[1]'
+Slack : -9.945
+TNS   : -94.859
+
+Type  : Slow 1100mV 0C Model Setup 'KEY[0]'
+Slack : -4.902
+TNS   : -13.400
+
+Type  : Slow 1100mV 0C Model Hold 'KEY[0]'
+Slack : -7.678
+TNS   : -24.181
+
+Type  : Slow 1100mV 0C Model Hold 'running_light:m1|out[1]'
+Slack : 0.639
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'KEY[0]'
+Slack : -0.421
+TNS   : -5.880
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'running_light:m1|out[1]'
+Slack : 0.253
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Setup 'running_light:m1|out[1]'
+Slack : -5.959
+TNS   : -56.814
+
+Type  : Fast 1100mV 85C Model Setup 'KEY[0]'
+Slack : -3.195
+TNS   : -6.576
+
+Type  : Fast 1100mV 85C Model Hold 'KEY[0]'
+Slack : -4.855
+TNS   : -14.817
+
+Type  : Fast 1100mV 85C Model Hold 'running_light:m1|out[1]'
+Slack : 0.499
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'KEY[0]'
+Slack : -0.625
+TNS   : -7.430
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'running_light:m1|out[1]'
+Slack : 0.388
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Setup 'running_light:m1|out[1]'
+Slack : -5.674
+TNS   : -54.532
+
+Type  : Fast 1100mV 0C Model Setup 'KEY[0]'
+Slack : -2.691
+TNS   : -5.336
+
+Type  : Fast 1100mV 0C Model Hold 'KEY[0]'
+Slack : -4.749
+TNS   : -14.945
+
+Type  : Fast 1100mV 0C Model Hold 'running_light:m1|out[1]'
+Slack : 0.433
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'KEY[0]'
+Slack : -0.656
+TNS   : -7.950
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'running_light:m1|out[1]'
+Slack : 0.387
+TNS   : 0.000
+
+------------------------------------------------------------

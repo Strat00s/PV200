@@ -1,0 +1,52 @@
+// running light module
+
+module running_light(input Clock, input START, input STOP, input RESET, output reg [9:0] LEDS);
+	
+	//states:
+	//RUN    0001 -> LEFT
+	//LEFT   0010
+	//RIGHT  0011
+	//STOP_L 0100
+	//STOP_R 0101
+	parameter S_RESET      = 'b000;
+	parameter S_RUN_LEFT   = 'b001;
+	parameter S_RUN_RIGHT  = 'b011;
+	parameter S_STOP_LEFT  = 'b101;
+	parameter S_STOP_RIGHT = 'b111;
+	
+	
+	reg state;
+	
+	initial begin
+        state = S_RESET;
+        LEDS = 'b0000000001; // Corrected binary literal with bit-width
+    end
+	
+	always @(Clock) begin
+		if (RESET) begin
+			LEDS = 'b0000000001;
+			state = S_RESET;
+		end
+		else if (STOP && !(state & 'b100)) begin
+			state = state | 'b100;
+		end
+		else if (START && (state & 'b100)) begin
+			state = state & 'b011;
+		end
+
+		if (state & 'b100) begin
+			case (state)
+				S_RESET:     state = S_RUN_LEFT;
+				S_RUN_LEFT:  LEDS = LEDS << 1;
+				S_RUN_RIGHT: LEDS = LEDS >> 1;
+			endcase
+			if (LEDS == 'b1000000000) begin
+				state = S_RUN_RIGHT;
+			end
+			if (LEDS == 'b0000000001) begin
+				state = S_RUN_LEFT;
+			end
+		end
+	end
+	
+endmodule

@@ -1,0 +1,1 @@
+Warning (10268): Verilog HDL information at running_light.v(33): always construct contains both blocking and non-blocking assignments File: C:/intelFPGA_lite/xbastyr/PV200/hw_02/running_light.v Line: 33

@@ -1,0 +1,6 @@
+
+State Machine - |hw_02|running_light:m1|state
+Name state.S_RESET state.S_RUN state.S_STOP 
+state.S_RESET 0 0 0 
+state.S_STOP 1 0 1 
+state.S_RUN 1 1 0 

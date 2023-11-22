@@ -1,0 +1,47 @@
+|hw_02
+CLOCK_50 => ~NO_FANOUT~
+KEY[0] => _.IN1
+KEY[1] => _.IN1
+KEY[2] => _.IN1
+KEY[3] => _.IN1
+LEDR[0] << running_light:m1.port4
+LEDR[1] << running_light:m1.port4
+LEDR[2] << running_light:m1.port4
+LEDR[3] << running_light:m1.port4
+LEDR[4] << running_light:m1.port4
+LEDR[5] << running_light:m1.port4
+LEDR[6] << running_light:m1.port4
+LEDR[7] << running_light:m1.port4
+LEDR[8] << running_light:m1.port4
+LEDR[9] << running_light:m1.port4
+
+
+|hw_02|running_light:m1
+Clock => out[0].CLK
+Clock => out[1].CLK
+Clock => out[2].CLK
+Clock => out[3].CLK
+Clock => dir.CLK
+Clock => state~1.DATAIN
+START => always1.IN1
+STOP => always1.IN0
+RESET => state.OUTPUTSELECT
+RESET => state.OUTPUTSELECT
+RESET => state.OUTPUTSELECT
+RESET => dir.OUTPUTSELECT
+RESET => out.OUTPUTSELECT
+RESET => out.OUTPUTSELECT
+RESET => out.OUTPUTSELECT
+RESET => out.OUTPUTSELECT
+LEDS[0] <= LEDS[0]$latch.DB_MAX_OUTPUT_PORT_TYPE
+LEDS[1] <= LEDS[1]$latch.DB_MAX_OUTPUT_PORT_TYPE
+LEDS[2] <= LEDS[2]$latch.DB_MAX_OUTPUT_PORT_TYPE
+LEDS[3] <= LEDS[3]$latch.DB_MAX_OUTPUT_PORT_TYPE
+LEDS[4] <= LEDS[4]$latch.DB_MAX_OUTPUT_PORT_TYPE
+LEDS[5] <= LEDS[5]$latch.DB_MAX_OUTPUT_PORT_TYPE
+LEDS[6] <= LEDS[6]$latch.DB_MAX_OUTPUT_PORT_TYPE
+LEDS[7] <= LEDS[7]$latch.DB_MAX_OUTPUT_PORT_TYPE
+LEDS[8] <= LEDS[8]$latch.DB_MAX_OUTPUT_PORT_TYPE
+LEDS[9] <= LEDS[9]$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+

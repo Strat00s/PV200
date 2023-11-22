@@ -9,46 +9,50 @@ z2
 !i10e 25
 !i10f 100
 cModel Technology
-Z0 dC:/intelFPGA_lite/qculen/week_08a
+dC:/intelFPGA_lite/qculen/week_08a
 vadder
-Z1 !s110 1700109895
-Z2 VDg1SIo80bB@j0V0VzS_@n1
-r1
-!s85 0
+Z0 !s110 1700151814
 !i10b 1
 !s100 J<Rh;_ieed=AoN7?cLWUd1
-Ie03M^Yf;R@T2hKG14E^5a0
-R0
+Z1 !s11b Dg1SIo80bB@j0V0VzS_@n1
+ISdFgnK<5XD1`oB[>8TH4>2
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+Z3 dC:/intelFPGA_lite/xbastyr/PV200/week_08a
 w1700105972
-8adder.v
-Fadder.v
-!i122 7
+8C:/intelFPGA_lite/xbastyr/PV200/week_08a/adder.v
+FC:/intelFPGA_lite/xbastyr/PV200/week_08a/adder.v
+!i122 10
 L0 3 8
-Z3 OV;L;2020.1;71
-31
-Z4 !s108 1700109895.000000
-Z5 !s107 adder_tb.v|adder.v|
-Z6 !s90 -reportprogress|300|adder.v|adder_tb.v|
-!i113 1
-Z7 tCvgOpt 0
-vadder_tb
-R1
-R2
+Z4 OV;L;2020.1;71
 r1
 !s85 0
-!i10b 1
-!s100 g><PILI4XeVb[KD=k<IH;2
-Ij^me0CbD^gMai>W17CLdN1
-R0
-w1700109478
-8adder_tb.v
-Fadder_tb.v
-!i122 7
-L0 3 20
-R3
 31
-R4
-R5
-R6
+Z5 !s108 1700151814.000000
+!s107 C:/intelFPGA_lite/xbastyr/PV200/week_08a/adder.v|
+!s90 -reportprogress|300|-work|work|C:/intelFPGA_lite/xbastyr/PV200/week_08a/adder.v|
 !i113 1
+Z6 o-work work
+Z7 tCvgOpt 0
+vadder_tb
+R0
+!i10b 1
+!s100 df79PBU6g0TSJD1FKJ9103
+R1
+IoELNjQlHCZ]5<z59@KDm<1
+R2
+R3
+w1700151574
+8C:/intelFPGA_lite/xbastyr/PV200/week_08a/adder_tb.v
+FC:/intelFPGA_lite/xbastyr/PV200/week_08a/adder_tb.v
+!i122 11
+L0 3 31
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/intelFPGA_lite/xbastyr/PV200/week_08a/adder_tb.v|
+!s90 -reportprogress|300|-work|work|C:/intelFPGA_lite/xbastyr/PV200/week_08a/adder_tb.v|
+!i113 1
+R6
 R7
