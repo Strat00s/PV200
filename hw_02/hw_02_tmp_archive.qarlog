@@ -1,0 +1,23 @@
+Quartus Prime Archive log --	C:/intelFPGA_lite/xbastyr/PV200/hw_02/hw_02_tmp_archive.qarlog
+
+Archive:	C:/intelFPGA_lite/xbastyr/PV200/hw_02/hw_02_tmp_archive.qar
+Date:		Wed Nov 22 13:34:03 2023
+Quartus Prime		20.1.1 Build 720 11/11/2020 SJ Lite Edition
+
+	=========== Files Selected: ===========
+C:/intelFPGA_lite/xbastyr/PV200/hw_02/hw_02.qpf
+C:/intelFPGA_lite/xbastyr/PV200/hw_02/hw_02.qsf
+C:/intelFPGA_lite/xbastyr/PV200/hw_02/hw_02.v
+C:/intelFPGA_lite/xbastyr/PV200/hw_02/running_light.v
+C:/intelFPGA_lite/xbastyr/PV200/hw_02/week_04.qsf
+c:/intelfpga_lite/20.1/quartus/bin64/assignment_defaults.qdf
+	======= Total: 6 files to archive =======
+
+	================ Status: ===============
+All files archived successfully.
+
+
+******* Archived project restoration attempt on Wed Nov 22 13:34:04 2023
+Source archive file:	C:/intelFPGA_lite/xbastyr/PV200/hw_02/hw_02_tmp_archive.qar
+Archive was extracted into	C:/intelFPGA_lite/xbastyr/PV200/hw_02_copy/
+		 - successfully.
