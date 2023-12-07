@@ -1,0 +1,10 @@
+
+State Machine - |gate_finder|state
+Name state.FAILED state.FINISHED state.XOR_TEST state.OR_TEST state.AND_TEST state.NOT_TEST state.RESET 
+state.RESET 0 0 0 0 0 0 0 
+state.NOT_TEST 0 0 0 0 0 1 1 
+state.AND_TEST 0 0 0 0 1 0 1 
+state.OR_TEST 0 0 0 1 0 0 1 
+state.XOR_TEST 0 0 1 0 0 0 1 
+state.FINISHED 0 1 0 0 0 0 1 
+state.FAILED 1 0 0 0 0 0 1 

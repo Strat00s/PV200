@@ -1,0 +1,23 @@
+-- begin_signature
+-- gate_finder
+-- end_signature
+WIDTH=6;
+DEPTH=12;
+
+ADDRESS_RADIX=UNS;
+DATA_RADIX=BIN;
+
+CONTENT BEGIN
+	11 :	011111;
+	10 :	100001;
+	9 :	100011;
+	8 :	010101;
+	7 :	010111;
+	6 :	011001;
+	5 :	011110;
+	4 :	100000;
+	3 :	100010;
+	2 :	010100;
+	1 :	010110;
+	0 :	011000;
+END;

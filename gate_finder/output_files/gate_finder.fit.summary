@@ -1,13 +1,13 @@
-Fitter Status : Successful - Wed Dec  6 16:31:10 2023
+Fitter Status : Successful - Thu Dec  7 18:30:53 2023
 Quartus Prime Version : 22.1std.2 Build 922 07/20/2023 SC Lite Edition
 Revision Name : gate_finder
 Top-level Entity Name : gate_finder
 Family : Cyclone V
 Device : 5CSEMA5F31C6
 Timing Models : Final
-Logic utilization (in ALMs) : 20 / 32,070 ( < 1 % )
-Total registers : 31
-Total pins : 57 / 457 ( 12 % )
+Logic utilization (in ALMs) : 288 / 32,070 ( < 1 % )
+Total registers : 143
+Total pins : 51 / 457 ( 11 % )
 Total virtual pins : 0
 Total block memory bits : 0 / 4,065,280 ( 0 % )
 Total RAM Blocks : 0 / 397 ( 0 % )
