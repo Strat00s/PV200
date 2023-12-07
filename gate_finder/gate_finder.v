@@ -1,7 +1,7 @@
 // Sequential gate finder
 
 module gate_finder(input CLOCK_50, input [3:0]KEY, output reg [9:0]LEDR, inout [35:0]GPIO_0);
-	assign reset = ~KEY[0];
+	assign rst = ~KEY[0];
 	
     // pin configuration
     wire [11:0] pins_in;
@@ -37,8 +37,8 @@ module gate_finder(input CLOCK_50, input [3:0]KEY, output reg [9:0]LEDR, inout [
     assign pins_in[11] = GPIO_0[31];
 
 
-    // 1Hz clock divider for testing
-	wire slow;
+    // slow clock for debuging
+    wire slow;
 	clock_divider s_clk(
 		.clk(CLOCK_50),
 		.reset(1'b0),
@@ -46,83 +46,73 @@ module gate_finder(input CLOCK_50, input [3:0]KEY, output reg [9:0]LEDR, inout [
 	);
 	
 	
-	// gate type
-	parameter NONE = 0;
-    parameter NOT  = 1;
-    parameter AND  = 2;
-    parameter OR   = 3;
-    parameter XOR  = 4;
 
     // state
     parameter RESET         = 0;
     parameter NOT_TEST      = 1;
-    parameter DETERMINE_NOT = 4;
-    parameter GATE_DETECT   = 5;
-    parameter FINISHED      = 6;
-    parameter FAILED        = 7;
+    parameter AND_TEST      = 2;
+    parameter OR_TEST       = 3;
+    parameter XOR_TEST      = 4;
+    parameter FINISHED      = 5;
+    parameter FAILED        = 6;
+    reg [7:0] state    = RESET; // current state
 
 
     // gpio read/write action
     parameter READ  = 0;
     parameter WRITE = 1;
-
     // gpio in/out config
     parameter IN  = 0;
     parameter OUT = 1;
-	
-
-    reg [7:0] gate_type = NONE; // found gate type
-    reg [7:0] state    = RESET; // current state
-
-
     reg rw = WRITE; //gpio read/write state
 
-    reg [7:0] match_cnt; // valid gate output counter
 
-    // resulting LED pattern to show once gate type is determined
-    reg [9:0] result;
+    reg [9:0] result    = 0; // resulting LED pattern to show once gate type is determined
+    integer i           = 0;
+    integer test_val    = 0; // value for which to test the output for (0, 1, 10, ...)
+    integer func_match  = 0; // counter for determining if all function outputs were encountered
+    integer match_cnt   = 0; // valid gate output counter
+    reg reset_all     = 0;
 
-
-    integer i = 0;
-    integer test_val = 0;
-    integer j = 0;
-    integer state_cnt = 0;
-    integer state_match = 0;
-
-    always @(posedge slow, posedge reset) begin
-        // go to reset state on rset
-        if (reset) begin
+    always @(posedge slow, posedge rst) begin
+        // go to rst state on rset
+        if (rst) begin
             state = RESET;
-            gate_type = NONE;
+        end
+
+        else if (state == RESET) begin
+            reset_all = 1;
+            state     = NOT_TEST;
         end
 
         // reset everything
-        else if (state == RESET) begin
-            state       = NOT_TEST;
-            i           = 0;
-            test_val    = 0;
-            match_cnt   = 0;
-            state_cnt   = 0;
-            state_match = 0;
-            LEDR        = 10'b0000000000;
-            result      = 10'b0000000000;
+        else if (reset_all) begin
+            reset_all  = 0;
+            rw         = WRITE;
+            test_val   = 0;
+            func_match = 0;
+            match_cnt  = 0;
+            LEDR       = 0;
+            result     = 0;
 
-            for (j = 0 ; j < 12; j = j + 1) begin
+            //reset all pins
+            for (i = 0 ; i < 12; i = i + 1) begin
                 pins_dir = IN;
                 pins_out = 0;
             end
+
+            i = 0;
         end
 
         // Start with NOT
         else if (state == NOT_TEST) begin
+				result[9] = 1; // last LED is for NOT
             // Go through every possible gate for NOT (3 on each side)
             // Write to pins
             if (rw == WRITE) begin
                 rw = READ;
-                // toggle pins one by one (while skipping probably input)
                 pins_out[i] = test_val[0];
                 pins_dir[i] = OUT;
-
                 test_val = test_val + 1;
             end
 
@@ -132,72 +122,88 @@ module gate_finder(input CLOCK_50, input [3:0]KEY, output reg [9:0]LEDR, inout [
 
                 // NOT -> match if input is not output
                 if (pins_out[i] == ~pins_in[i + 1])
-                    state_match = state_match + 1;
+                    func_match = func_match + 1;
 
                // NOT only has 2 states
                 if (test_val == 2) begin
                     test_val = 0;
 
                     // if we have a match, it is most likely a valid NOT gate
-                    if (state_match == 2) begin
+                    if (func_match == 2) begin
                         match_cnt = match_cnt + 1;
-                        result[9] = 1;
                         result[i / 2] = 1;
                     end
 
                     i = i + 2;  // move to next pin
-                    state_match = 0;
+                    func_match = 0;
                 end
             end
 
-            // debuging
-            LEDR[9:6] = test_val;
-            LEDR[4:0] = match_cnt;
-
-            if (i >= 12)
-                state = DETERMINE_NOT;
+            if (i >= 12) begin
+                if (match_cnt >= 3) begin
+                    state = FINISHED;
+                end
+                else begin
+                    reset_all = 1;
+                    state = AND_TEST;
+                end
+            end
         end
+		  
+        // AND test
+        else if (state == AND_TEST) begin
+				result[8] = 1; // second to last LED is for AND
+            // Write to pins
+            if (rw == WRITE) begin
+                rw = READ;
+                pins_out[i]     = test_val[0];
+					 pins_out[i + 1] = test_val[1];
+                pins_dir[i]     = OUT;
+					 pins_dir[i + 1] = OUT;
+                test_val = test_val + 1;
+            end
 
-        else if (state == DETERMINE_NOT) begin
-            
-            // Let's say that at least half must be OK
-            if (match_cnt > 3)
-                state = FINISHED;
-            else
-                state = FAILED;
-        end
+            // Read from pins on next clock
+            else begin
+                rw = WRITE;
 
+                // A and B == X
+                if ((pins_out[i] & pins_out[i + 1]) == pins_in[i + 2])
+                    func_match = func_match + 1;
 
-        else if (state == FINISHED) begin
-            LEDR = result;
+               // AND has 4 func values
+                if (test_val == 4) begin
+                    test_val = 0;
+
+                    // if we have a full function match, it is most likely an AND gate
+                    if (func_match == 4) begin
+                        match_cnt = match_cnt + 1;
+                        result[i / 3] = 1;
+                    end
+
+                    i = i + 3;  // move to next pin
+                    func_match = 0;
+                end
+            end
+
+            if (i >= 12) begin
+                if (match_cnt >= 2) begin
+                    result[9] = 2; // last LED is for NOT
+                    state = FINISHED;
+                end
+                else begin
+                    reset_all = 1;
+                    state = OR_TEST;
+                end
+            end
         end
-        else if (state == FAILED) begin
-            LEDR = 10'b1111111111;
+		  
+		  
+		  else if (state == FINISHED) begin
+            // nothing to see here. Just wait for a reset
         end
-        //else if (gate_type == NOT) begin
-        //    if (state == WRITE) begin
-        //    end
-        //    else if (state == READ) begin
-        //    end
-        //end
-        //else if (gate_type == AND) begin
-        //    if (state == WRITE) begin
-        //    end
-        //    else if (state == READ) begin
-        //    end
-        //end
-        //else if (gate_type == OR) begin
-        //    if (state == WRITE) begin
-        //    end
-        //    else if (state == READ) begin
-        //    end
-        //end
-        //else if (gate_type == XOR) begin
-        //    if (state == WRITE) begin
-        //    end
-        //    else if (state == READ) begin
-        //    end
-        //end
+		  
+		  LEDR = result;
 
 	end
 	
