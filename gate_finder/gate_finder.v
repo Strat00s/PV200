@@ -39,15 +39,12 @@ module gate_finder(input CLOCK_50, input [3:0]KEY, output reg [9:0]LEDR, inout [
     parameter XOR  = 4;
 
     // state
-    parameter RESET       = 0;
-    parameter NOT_TEST    = 1;
-    parameter IN_CNT1     = 1;
-    parameter IN_CNT2     = 2;
-    parameter IN_CNT3     = 3;
-    parameter DETERMINE   = 4;
-    parameter GATE_DETECT = 5;
-    parameter FINISHED    = 6;
-    parameter FAILED      = 7;
+    parameter RESET         = 0;
+    parameter NOT_TEST      = 1;
+    parameter DETERMINE_NOT = 4;
+    parameter GATE_DETECT   = 5;
+    parameter FINISHED      = 6;
+    parameter FAILED        = 7;
 
 
     // gpio read/write action
@@ -71,6 +68,9 @@ module gate_finder(input CLOCK_50, input [3:0]KEY, output reg [9:0]LEDR, inout [
 
     reg [7:0] match_cnt; // valid gate output counter
 
+    // resulting LED pattern to show once gate type is determined
+    reg [9:0] result;
+
 
     // Assign to all our pins
     assign GPIO_0[24] = pins_dir[0]  ? pins_out[0]  : 1'bz;
@@ -93,7 +93,7 @@ module gate_finder(input CLOCK_50, input [3:0]KEY, output reg [9:0]LEDR, inout [
     integer state_cnt = 0;
     integer state_match = 0;
 
-    always @(posedge ~KEY[3], posedge reset) begin
+    always @(posedge slow, posedge reset) begin
         // go to reset state on rset
         if (reset) begin
             state = RESET;
@@ -102,13 +102,15 @@ module gate_finder(input CLOCK_50, input [3:0]KEY, output reg [9:0]LEDR, inout [
 
         // reset all pins to high-Z in reset state
         else if (state == RESET) begin
-            state = NOT_TEST;
-            i = 0;
-            test_val = 0;
-            match_cnt = 0;
-            state_cnt = 0;
+            state       = NOT_TEST;
+            i           = 0;
+            test_val    = 0;
+            match_cnt   = 0;
+            state_cnt   = 0;
             state_match = 0;
-            LEDR = 10'b0000000000;
+            LEDR        = 10'b0000000000;
+            result      = 10'b0000000000;
+
             for (j = 0 ; j < 12; j = j + 1) begin
                 pins_dir = IN;
                 pins_out = 0;
@@ -122,7 +124,7 @@ module gate_finder(input CLOCK_50, input [3:0]KEY, output reg [9:0]LEDR, inout [
                 rw = READ;
                 // toggle pins one by one (while skipping probably input)
                 pins_out[i] = test_val[0];
-					 pins_dir[i] = OUT;
+                pins_dir[i] = OUT;
 
                 test_val = test_val + 1;
             end
@@ -132,41 +134,47 @@ module gate_finder(input CLOCK_50, input [3:0]KEY, output reg [9:0]LEDR, inout [
                 rw = WRITE;
 
                 // NOT -> match if input is not output
-                if (pins_out[i] != GPIO_0[pins[i + 1]])
+                if (pins_out[i] == ~GPIO_0[pins[i + 1]])
                     state_match = state_match + 1;
 
                // NOT only has 2 states
-					if (test_val == 2) begin
-						test_val = 0;
-						i = i + 2;  // move to next pin
-						if (state_match == 2) begin
-							match_cnt = match_cnt + 1;
-						end
-						state_match = 0;
-					end
+                if (test_val == 2) begin
+                    test_val = 0;
+						  
+						  // if we have a match, it is most likely a valid NOT gate
+                    if (state_match == 2) begin
+                        match_cnt = match_cnt + 1;
+                        result[9] = 1;
+                        result[i / 2] = 1;
+                    end
+						  
+                    i = i + 2;  // move to next pin
+                    state_match = 0;
+                end
             end
-				
-				LEDR[7:6] = test_val;
 
+            // debuging
+            LEDR[7:6] = test_val;
             LEDR[4:0] = match_cnt;
 
             if (i >= 12)
-                state = DETERMINE;
+                state = DETERMINE_NOT;
         end
 
-        else if (state == DETERMINE) begin
-            LEDR[7:0] = match_cnt;
-            if (match_cnt > 4)
+        else if (state == DETERMINE_NOT) begin
+            
+            // Let's say that at least half must be OK
+            if (match_cnt > 3)
                 state = FINISHED;
             else
                 state = FAILED;
         end
 
         else if (state == FINISHED) begin
-            LEDR[9] = 1;
+            LEDR = result;
         end
         else if (state == FAILED) begin
-            LEDR[8] = 1;
+            LEDR = 10'b1111111111;
         end
         //else if (gate_type == NOT) begin
         //    if (state == WRITE) begin
