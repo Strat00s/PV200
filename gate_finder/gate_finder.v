@@ -106,7 +106,7 @@ module gate_finder(input CLOCK_50, input [3:0]KEY, output reg [9:0]LEDR, inout [
 
         // Start with NOT
         else if (state == NOT_TEST) begin
-				result[9] = 1; // last LED is for NOT
+            result[9] = 1; // last LED is for NOT
             // Go through every possible gate for NOT (3 on each side)
             // Write to pins
             if (rw == WRITE) begin
@@ -149,17 +149,17 @@ module gate_finder(input CLOCK_50, input [3:0]KEY, output reg [9:0]LEDR, inout [
                 end
             end
         end
-		  
+
         // AND test
         else if (state == AND_TEST) begin
-				result[8] = 1; // second to last LED is for AND
+            result[8] = 1; // second to last LED is for AND
             // Write to pins
             if (rw == WRITE) begin
                 rw = READ;
                 pins_out[i]     = test_val[0];
-					 pins_out[i + 1] = test_val[1];
+                pins_out[i + 1] = test_val[1];
                 pins_dir[i]     = OUT;
-					 pins_dir[i + 1] = OUT;
+                pins_dir[i + 1] = OUT;
                 test_val = test_val + 1;
             end
 
@@ -188,7 +188,6 @@ module gate_finder(input CLOCK_50, input [3:0]KEY, output reg [9:0]LEDR, inout [
 
             if (i >= 12) begin
                 if (match_cnt >= 2) begin
-                    result[9] = 2; // last LED is for NOT
                     state = FINISHED;
                 end
                 else begin
@@ -197,13 +196,113 @@ module gate_finder(input CLOCK_50, input [3:0]KEY, output reg [9:0]LEDR, inout [
                 end
             end
         end
-		  
-		  
-		  else if (state == FINISHED) begin
+
+
+        // OR test
+        else if (state == OR_TEST) begin
+            result[7] = 1; // third to last for OR
+            // Write to pins
+            if (rw == WRITE) begin
+                rw = READ;
+                pins_out[i]     = test_val[0];
+                pins_out[i + 1] = test_val[1];
+                pins_dir[i]     = OUT;
+                pins_dir[i + 1] = OUT;
+                test_val = test_val + 1;
+            end
+
+            // Read from pins on next clock
+            else begin
+                rw = WRITE;
+
+                // A or B == X
+                if ((pins_out[i] | pins_out[i + 1]) == pins_in[i + 2])
+                    func_match = func_match + 1;
+
+               // OR has 4 func values
+                if (test_val == 4) begin
+                    test_val = 0;
+
+                    // if we have a full function match, it is most likely an AND gate
+                    if (func_match == 4) begin
+                        match_cnt = match_cnt + 1;
+                        result[i / 3] = 1;
+                    end
+
+                    i = i + 3;  // move to next pin
+                    func_match = 0;
+                end
+            end
+
+            if (i >= 12) begin
+                if (match_cnt >= 2) begin
+                    state = FINISHED;
+                end
+                else begin
+                    reset_all = 1;
+                    state = XOR_TEST;
+                end
+            end
+        end
+
+
+        // XOR test
+        else if (state == XOR_TEST) begin
+            result[6] = 1; // fourth to last for XOR
+
+            // Write to pins
+            if (rw == WRITE) begin
+                rw = READ;
+                pins_out[i]     = test_val[0];
+                pins_out[i + 1] = test_val[1];
+                pins_dir[i]     = OUT;
+                pins_dir[i + 1] = OUT;
+                test_val = test_val + 1;
+            end
+
+            // Read from pins on next clock
+            else begin
+                rw = WRITE;
+
+                // A xor B == X
+                if ((pins_out[i] ^ pins_out[i + 1]) == pins_in[i + 2])
+                    func_match = func_match + 1;
+
+                if (test_val == 4) begin
+                    test_val = 0;
+
+                    // full function match
+                    if (func_match == 4) begin
+                        match_cnt = match_cnt + 1;
+                        result[i / 3] = 1;
+                    end
+
+                    i = i + 3;  // move to next pin
+                    func_match = 0;
+                end
+            end
+
+            if (i >= 12) begin
+                if (match_cnt >= 2) begin
+                    state = FINISHED;
+                end
+                else begin
+                    reset_all = 1;
+                    state = FAILED;
+                end
+            end
+        end
+
+
+        else if (state == FINISHED) begin
             // nothing to see here. Just wait for a reset
         end
-		  
-		  LEDR = result;
+
+        else if (state == FAILED) begin
+            // nothing to see here. Just wait for a reset
+        end
+
+        LEDR = result;
 
 	end
 	
