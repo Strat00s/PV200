@@ -1,25 +1,40 @@
-
+// Sequential gate finder
 
 module gate_finder(input CLOCK_50, input [3:0]KEY, output reg [9:0]LEDR, inout [35:0]GPIO_0);
 	assign reset = ~KEY[0];
 	
-    // setup """easy""" gpio lookup arrays
-	reg [5:0] pins[11:0];
+    // pin configuration
+    wire [11:0] pins_in;
+    reg  [11:0] pins_out = 0; // all to 0
+    reg  [11:0] pins_dir = 0; // all inputs (high Z)
 
-    initial begin
-        pins[0]  = 24;
-        pins[1]  = 22;
-        pins[2]  = 20;
-        pins[3]  = 34;
-        pins[4]  = 32;
-        pins[5]  = 30;
-        pins[6]  = 25;
-        pins[7]  = 23;
-        pins[8]  = 21;
-        pins[9]  = 35;
-        pins[10] = 33;
-        pins[11] = 31;
-    end
+    // Assign to all our pins
+    assign GPIO_0[24] = pins_dir[0]  ? pins_out[0]  : 1'bz;
+    assign GPIO_0[22] = pins_dir[1]  ? pins_out[1]  : 1'bz;
+    assign GPIO_0[20] = pins_dir[2]  ? pins_out[2]  : 1'bz;
+    assign GPIO_0[34] = pins_dir[3]  ? pins_out[3]  : 1'bz;
+    assign GPIO_0[32] = pins_dir[4]  ? pins_out[4]  : 1'bz;
+    assign GPIO_0[30] = pins_dir[5]  ? pins_out[5]  : 1'bz;
+    assign GPIO_0[25] = pins_dir[6]  ? pins_out[6]  : 1'bz;
+    assign GPIO_0[23] = pins_dir[7]  ? pins_out[7]  : 1'bz;
+    assign GPIO_0[21] = pins_dir[8]  ? pins_out[8]  : 1'bz;
+    assign GPIO_0[35] = pins_dir[9]  ? pins_out[9]  : 1'bz;
+    assign GPIO_0[33] = pins_dir[10] ? pins_out[10] : 1'bz;
+    assign GPIO_0[31] = pins_dir[11] ? pins_out[11] : 1'bz;
+
+    // assign outputs
+    assign pins_in[0]  = GPIO_0[24];
+    assign pins_in[1]  = GPIO_0[22];
+    assign pins_in[2]  = GPIO_0[20];
+    assign pins_in[3]  = GPIO_0[34];
+    assign pins_in[4]  = GPIO_0[32];
+    assign pins_in[5]  = GPIO_0[30];
+    assign pins_in[6]  = GPIO_0[25];
+    assign pins_in[7]  = GPIO_0[23];
+    assign pins_in[8]  = GPIO_0[21];
+    assign pins_in[9]  = GPIO_0[35];
+    assign pins_in[10] = GPIO_0[33];
+    assign pins_in[11] = GPIO_0[31];
 
 
     // 1Hz clock divider for testing
@@ -48,8 +63,8 @@ module gate_finder(input CLOCK_50, input [3:0]KEY, output reg [9:0]LEDR, inout [
 
 
     // gpio read/write action
-    parameter WRITE = 0;
-    parameter READ  = 1;
+    parameter READ  = 0;
+    parameter WRITE = 1;
 
     // gpio in/out config
     parameter IN  = 0;
@@ -61,30 +76,11 @@ module gate_finder(input CLOCK_50, input [3:0]KEY, output reg [9:0]LEDR, inout [
 
 
     reg rw = WRITE; //gpio read/write state
-    reg dir             = 0; // gpio direction
-    reg [11:0] pins_out = 0; // all to 0
-    reg [11:0] pins_dir = 0; // all inputs (high Z)
-
 
     reg [7:0] match_cnt; // valid gate output counter
 
     // resulting LED pattern to show once gate type is determined
     reg [9:0] result;
-
-
-    // Assign to all our pins
-    assign GPIO_0[24] = pins_dir[0]  ? pins_out[0]  : 1'bz;
-    assign GPIO_0[22] = pins_dir[1]  ? pins_out[1]  : 1'bz;
-    assign GPIO_0[20] = pins_dir[2]  ? pins_out[2]  : 1'bz;
-    assign GPIO_0[34] = pins_dir[3]  ? pins_out[3]  : 1'bz;
-    assign GPIO_0[32] = pins_dir[4]  ? pins_out[4]  : 1'bz;
-    assign GPIO_0[30] = pins_dir[5]  ? pins_out[5]  : 1'bz;
-    assign GPIO_0[25] = pins_dir[6]  ? pins_out[6]  : 1'bz;
-    assign GPIO_0[23] = pins_dir[7]  ? pins_out[7]  : 1'bz;
-    assign GPIO_0[21] = pins_dir[8]  ? pins_out[8]  : 1'bz;
-    assign GPIO_0[35] = pins_dir[9]  ? pins_out[9]  : 1'bz;
-    assign GPIO_0[33] = pins_dir[10] ? pins_out[10] : 1'bz;
-    assign GPIO_0[31] = pins_dir[11] ? pins_out[11] : 1'bz;
 
 
     integer i = 0;
@@ -100,7 +96,7 @@ module gate_finder(input CLOCK_50, input [3:0]KEY, output reg [9:0]LEDR, inout [
             gate_type = NONE;
         end
 
-        // reset all pins to high-Z in reset state
+        // reset everything
         else if (state == RESET) begin
             state       = NOT_TEST;
             i           = 0;
@@ -117,6 +113,7 @@ module gate_finder(input CLOCK_50, input [3:0]KEY, output reg [9:0]LEDR, inout [
             end
         end
 
+        // Start with NOT
         else if (state == NOT_TEST) begin
             // Go through every possible gate for NOT (3 on each side)
             // Write to pins
@@ -134,27 +131,27 @@ module gate_finder(input CLOCK_50, input [3:0]KEY, output reg [9:0]LEDR, inout [
                 rw = WRITE;
 
                 // NOT -> match if input is not output
-                if (pins_out[i] == ~GPIO_0[pins[i + 1]])
+                if (pins_out[i] == ~pins_in[i + 1])
                     state_match = state_match + 1;
 
                // NOT only has 2 states
                 if (test_val == 2) begin
                     test_val = 0;
-						  
-						  // if we have a match, it is most likely a valid NOT gate
+
+                    // if we have a match, it is most likely a valid NOT gate
                     if (state_match == 2) begin
                         match_cnt = match_cnt + 1;
                         result[9] = 1;
                         result[i / 2] = 1;
                     end
-						  
+
                     i = i + 2;  // move to next pin
                     state_match = 0;
                 end
             end
 
             // debuging
-            LEDR[7:6] = test_val;
+            LEDR[9:6] = test_val;
             LEDR[4:0] = match_cnt;
 
             if (i >= 12)
@@ -169,6 +166,7 @@ module gate_finder(input CLOCK_50, input [3:0]KEY, output reg [9:0]LEDR, inout [
             else
                 state = FAILED;
         end
+
 
         else if (state == FINISHED) begin
             LEDR = result;
